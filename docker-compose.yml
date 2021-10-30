@@ -1,74 +1,76 @@
 version: "3.8"
 
 volumes:
-    postgresql:
+  postgresql:
 
 networks:
-    dmz:
-        driver: bridge
-    service:
-        driver: bridge
-    data:
-        driver: bridge
+  dmz:
+    driver: bridge
+  service:
+    driver: bridge
+  data:
+    driver: bridge
 
 services:
-    gateway:
-        build: ./appliance/gateway
-        logging:
-          options:
-            max-size: "10m"
-            max-file: "3"
-        networks:
-            dmz:
-            service:
-        ports:
-            - "443:443"
+  gateway:
+    build: ./appliance/gateway
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      dmz:
+      service:
+        aliases:
+          - "identity.phex.local"
+    ports:
+      - "443:443"
 
-    identity:
-        image: jboss/keycloak:14.0.0
-        restart: always
-        logging:
-          options:
-            max-size: "10m"
-            max-file: "3"
-        networks:
-            - service
-            - data
-        environment:
-            KEYCLOAK_USER: ${KEYCLOAK_ADMINUSER}
-            KEYCLOAK_PASSWORD: ${KEYCLOAK_ADMINUSER_PASSWORD}
-            DB_VENDOR: postgres
-            DB_ADDR: db
-            DB_USER: ${DATABASE_USER}
-            DB_PASSWORD: ${DATABASE_USER_PASSWORD}
-            PROXY_ADDRESS_FORWARDING: "true"
+  identity:
+    image: jboss/keycloak:14.0.0
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - service
+      - data
+    environment:
+      KEYCLOAK_USER: ${KEYCLOAK_ADMINUSER}
+      KEYCLOAK_PASSWORD: ${KEYCLOAK_ADMINUSER_PASSWORD}
+      DB_VENDOR: postgres
+      DB_ADDR: db
+      DB_USER: ${DATABASE_USER}
+      DB_PASSWORD: ${DATABASE_USER_PASSWORD}
+      PROXY_ADDRESS_FORWARDING: "true"
 
-    api:
-        build: ./appliance/api
-        logging:
-            options:
-                max-size: "10m"
-                max-file: "3"
-        networks:
-            - service
-            - data
-        environment:
-            DEBUG: "true"
-        volumes:
-            - ./appliance/api/phex:/opt/phex_api/phex
+  api:
+    build: ./appliance/api
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - service
+      - data
+    environment:
+      DEBUG: "true"
+    volumes:
+      - ./appliance/api/phex:/opt/phex_api/phex
 
-    db:
-        build: ./appliance/database
-        restart: always
-        logging:
-          options:
-            max-size: "10m"
-            max-file: "3"
-        networks:
-            - data
-        environment:
-            POSTGRES_DB: keycloak
-            POSTGRES_USER: ${DATABASE_USER}
-            POSTGRES_PASSWORD: ${DATABASE_USER_PASSWORD}
-        volumes:
-            - postgresql:/var/lib/postgresql
+  db:
+    build: ./appliance/database
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_USER_PASSWORD}
+    volumes:
+      - postgresql:/var/lib/postgresql

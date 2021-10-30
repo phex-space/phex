@@ -1,25 +1,29 @@
-FROM python:3.7-alpine
+FROM python:3.9-buster
 
-MAINTAINER phex-space
+COPY ./phex.ca.pem /usr/local/share/ca-certificates/
 
-RUN apk update && apk add --no-cache git openssh-client \
-        && addgroup -S -g 1001 phex \
-        && adduser -S -D -h /opt/phex_api -u 1001 -G phex phex
+RUN apt-get -y update && apt-get -y upgrade && \
+    apt-get install -y build-essential && \
+    apt-get install -y libpq-dev && \
+    useradd --create-home --home-dir /opt/app phex && \
+    chown -Rf phex.phex /opt/app && \
+    update-ca-certificates
 
 USER phex
-
-ENV PATH="/opt/phex_api/.local/bin:$PATH"
+ENV PATH="/opt/app/.local/bin:$PATH"
 
 RUN pip install pipenv --upgrade --user
 
-WORKDIR /opt/phex_api
-ENV PYTHONPATH="$PYTHONPATH:/opt/phex_api"
+WORKDIR /opt/app
+ENV PYTHONPATH="$PYTHONPATH:/opt/app"
 
-COPY Pipfile Pipfile.lock ./
-RUN pipenv install
+# Install dependencies:
+COPY Pipfile ./
+RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy && \
+    cat /usr/local/share/ca-certificates/phex.ca.pem >> /opt/app/.venv/lib/python3.9/site-packages/certifi/cacert.pem
 
 COPY phex phex
 
 EXPOSE 8080
 CMD ["pipenv", "run", "hypercorn", "--bind", "0.0.0.0:8080", "--reload", "phex:app"]
-#CMD tail -f /dev/null
+#CMD  tail -f /dev/null
