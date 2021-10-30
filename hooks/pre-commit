@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+export SCRIPT_HOME="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+export PROJECT_HOME="$( cd "$SCRIPT_HOME/.." >/dev/null 2>&1 ; pwd -P )"
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+	against=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	against=$(git hash-object -t tree /dev/null)
+fi
+
+cd "${PROJECT_HOME}/appliance/api/phex"
+flake8 --max-line-length=120 --max-complexity=6
+
+if [ "$?" != 0 ]
+then
+  cat <<\EOF
+Bitte beheben Sie die Probleme im Code.
+EOF
+  exit 1
+fi
+
+exec git diff-index --check --cached $against --
