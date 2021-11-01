@@ -59,6 +59,19 @@ services:
     volumes:
       - ./appliance/api/phex:/opt/phex_api/phex
 
+  client:
+    build: ./appliance/client
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - service
+    environment:
+      DEBUG: "true"
+    volumes:
+      - ./appliance/client:/opt/app
+
   db:
     build: ./appliance/database
     restart: always
