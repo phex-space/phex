@@ -1,21 +1,15 @@
-import json
-import urllib.parse
 import uuid
 
 import fastapi
-import httpx
-import jwcrypto.jwt
-from fastapi import Depends, HTTPException
+from fastapi import HTTPException
 
 from starlette.requests import Request
-from starlette.responses import Response, RedirectResponse
+from starlette.responses import Response
 
 from .access import Access
-from .metadata import Metadata
 from .openidconnectconfiguration import OpenIdConnectConfiguration
 from .openidconnectclient import OpenIdConnectClient
-from .signinrequest import SigninRequest
-from .utils import request_url, get_string_value, decode_jwt, abort
+from .utils import request_url, decode_jwt, abort
 
 store = {}
 
@@ -32,11 +26,9 @@ class OpenIdConnect(object):
             session = store[state]
             sr = session["request"]
             tokens = await self.__client.get_token_by_code(code)
-            id_token = tokens.get("id_token")
             access_token = tokens.get("access_token")
             expires_in = tokens.get("expires_in")
             decoded_token = decode_jwt(access_token, await self.__client.key_set())
-            print(decoded_token, tokens, flush=True)
             if "nonce" not in decoded_token or decoded_token["nonce"] != sr.nonce:
                 return abort(401, "WrongNonce")
             del store[state]
@@ -66,9 +58,11 @@ class OpenIdConnect(object):
         auth_type, access_token = authorization.split(" ")
         return {
             "jwt": decode_jwt(access_token, await self.__client.key_set()),
-            "permission": str(await self.__client.approve_access(access_token, [
-                Access("read", "license")
-            ], "api"))
+            "permission": str(
+                await self.__client.approve_access(
+                    access_token, [Access("read", "license")], "api"
+                )
+            ),
         }
 
 
