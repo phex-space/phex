@@ -8,6 +8,9 @@ fastapi = "*"
 pydantic = "*"
 hypercorn = "*"
 fastapi-oidc = "*"
+httpx = "*"
+async-lru = "*"
+jwcrypto = "*"
 
 [dev-packages]
 pytest = "*"

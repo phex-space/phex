@@ -57,20 +57,20 @@ services:
     environment:
       DEBUG: "true"
     volumes:
-      - ./appliance/api/phex:/opt/phex_api/phex
+      - ${PWD}/appliance/api/phex:/opt/app/phex
 
-  client:
-    build: ./appliance/client
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "3"
-    networks:
-      - service
-    environment:
-      DEBUG: "true"
-    volumes:
-      - ./appliance/client:/opt/app
+#  client:
+#    build: ./appliance/client
+#    logging:
+#      options:
+#        max-size: "10m"
+#        max-file: "3"
+#    networks:
+#      - service
+#    environment:
+#      DEBUG: "true"
+#    volumes:
+#      - ./appliance/client:/opt/app
 
   db:
     build: ./appliance/database

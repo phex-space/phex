@@ -1,10 +1,15 @@
 import fastapi
+from fastapi import Depends
+from starlette.requests import Request
 
-from phex import authentication
+from phex.authentication import authentication
+from phex.oidc.metadata import Metadata
+from phex.oidc.openidconnectconfiguration import OpenIdConnectConfiguration
+from phex.oidc.signinrequest import SigninRequest
 
 router = fastapi.APIRouter(prefix="/user")
 
 
 @router.get("")
-def list_user(token = fastapi.Depends(authentication.authenticate_user)):
-    return {"hallo": token}
+async def list_user(auth=Depends(authentication)):
+    return {"hallo": auth}
