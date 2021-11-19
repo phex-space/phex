@@ -17,7 +17,8 @@ class Consent(object):
                 setattr(self, f"can_{scope}_{resource_name}", True)
 
     def __repr__(self):
-        buffer = StringIO("Consent(")
+        buffer = StringIO()
+        buffer.write("Consent(")
         first = False
         for attr, value in self.__dict__.items():
             if attr.startswith("can_"):

@@ -70,11 +70,12 @@ class OpenIdConnectClient(object):
             },
         )
         response_data = response.json()
+        _logger.debug("Status: {}".format(response.status_code))
         if response.status_code != 200:
             _logger.error("Permission response: %s - %s", response.status_code, response_data)
             return abort(response.status_code,
                          response_data.get('error', 'InvalidRequest'), response_data.get('error_description', None))
-        grant_result = await decode_jwt(response_data['access_token'], jwks)
+        grant_result = decode_jwt(response_data['access_token'], jwks)
         return Consent(access, grant_result['authorization']['permissions'])
 
     async def create_signin_request(self) -> SigninRequest:

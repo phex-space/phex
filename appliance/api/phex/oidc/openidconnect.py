@@ -7,6 +7,7 @@ from starlette.requests import Request
 from starlette.responses import Response
 
 from .access import Access
+from .authenticationresult import AuthenticationResult
 from .openidconnectconfiguration import OpenIdConnectConfiguration
 from .openidconnectclient import OpenIdConnectClient
 from .utils import request_url, decode_jwt, abort
@@ -56,14 +57,16 @@ class OpenIdConnect(object):
             raise HTTPException(307, headers={"Location": await sr.signin_url(state)})
 
         auth_type, access_token = authorization.split(" ")
-        return {
-            "jwt": decode_jwt(access_token, await self.__client.key_set()),
-            "permission": str(
-                await self.__client.approve_access(
-                    access_token, [Access("read", "license")], "api"
-                )
-            ),
-        }
+        return AuthenticationResult(
+            access_token, decode_jwt(access_token, await self.__client.key_set())
+        )
+
+    async def approve_access(self, access_token, audience, *access: Access):
+        return await self.__client.approve_access(
+            access_token,
+            *access,
+            audience,
+        )
 
 
 """
