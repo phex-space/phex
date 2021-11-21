@@ -6,6 +6,7 @@ from fastapi import HTTPException
 from starlette.requests import Request
 from starlette.responses import Response
 
+from ._routes import register_callback
 from .access import Access
 from .authenticationresult import AuthenticationResult
 from .openidconnectconfiguration import OpenIdConnectConfiguration
@@ -20,30 +21,7 @@ class OpenIdConnect(object):
         self.__client = OpenIdConnectClient(configuration)
 
     def engage(self, app: fastapi.FastAPI):
-        @app.get("/oidc/callback")
-        async def oidc_callback(state: str, code: str, response: Response):
-            if state not in store:
-                raise HTTPException(401)
-            session = store[state]
-            sr = session["request"]
-            tokens = await self.__client.get_token_by_code(code)
-            access_token = tokens.get("access_token")
-            expires_in = tokens.get("expires_in")
-            decoded_token = decode_jwt(access_token, await self.__client.key_set())
-            if "nonce" not in decoded_token or decoded_token["nonce"] != sr.nonce:
-                return abort(401, "WrongNonce")
-            del store[state]
-            store[decoded_token.get("session_state")] = tokens
-            response.status_code = 307
-            response.headers["Location"] = session["redirect_url"]
-            response.set_cookie(
-                "phex_auth",
-                "Bearer {}".format(access_token),
-                httponly=True,
-                secure=True,
-                expires=expires_in,
-            )
-            print(tokens, flush=True)
+        register_callback(app, self.__client, store)
 
     async def __call__(self, request: Request, response: Response):
         authorization: str = request.headers.get("Authorization")
@@ -51,10 +29,10 @@ class OpenIdConnect(object):
             authorization = request.cookies.get("phex_auth")
 
         if not authorization:
-            state = uuid.uuid4().hex
-            sr = await self.__client.create_signin_request()
-            store[state] = {"request": sr, "redirect_url": request_url(request)}
-            raise HTTPException(307, headers={"Location": await sr.signin_url(state)})
+            sr = await self.__client.create_signin_request(
+                {"redirect_url": request_url(request)}
+            )
+            raise HTTPException(307, headers={"Location": await sr.signin_url()})
 
         auth_type, access_token = authorization.split(" ")
         return AuthenticationResult(

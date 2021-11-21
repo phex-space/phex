@@ -4,6 +4,7 @@ from typing import Optional
 
 import httpx
 import jwcrypto.jwk
+from fastapi import HTTPException
 
 from .access import Access
 from .consent import Consent
@@ -20,6 +21,7 @@ class OpenIdConnectClient(object):
         self.__configuration = configuration
         self.__http: httpx.AsyncClient = httpx.AsyncClient()
         self.__metadata: Optional[Metadata] = None
+        self.__store = {}
 
     async def dispose(self):
         await self.__http.aclose()
@@ -54,11 +56,17 @@ class OpenIdConnectClient(object):
             metadata.token_endpoint(),
             data=payload,
         )
-        return response.json()
+        result = response.json()
+        self.__store[result["session_state"]] = result
+        return result
 
     async def approve_access(
-        self, access_token: str, access: list[Access], audience: str
+        self, access_token: str, access: list[Access], audience: str = None
     ):
+        if not access_token:
+            raise ValueError("access_token")
+        if not access_token:
+            raise ValueError("access")
         metadata, jwks = await asyncio.gather(self.get_metadata(), self.key_set())
         response: httpx.Response = await self.__http.post(
             url=metadata.token_endpoint(),
@@ -70,13 +78,36 @@ class OpenIdConnectClient(object):
             },
         )
         response_data = response.json()
-        _logger.debug("Status: {}".format(response.status_code))
         if response.status_code != 200:
-            _logger.error("Permission response: %s - %s", response.status_code, response_data)
-            return abort(response.status_code,
-                         response_data.get('error', 'InvalidRequest'), response_data.get('error_description', None))
-        grant_result = decode_jwt(response_data['access_token'], jwks)
-        return Consent(access, grant_result['authorization']['permissions'])
+            _logger.error(
+                "Permission response: %s - %s", response.status_code, response_data
+            )
+            return abort(
+                response.status_code,
+                response_data.get("error", "InvalidRequest"),
+                response_data.get("error_description", None),
+            )
+        grant_result = decode_jwt(response_data["access_token"], jwks)
+        return Consent(access, grant_result["authorization"]["permissions"])
 
-    async def create_signin_request(self) -> SigninRequest:
-        return SigninRequest(await self.get_metadata(), self.__configuration)
+    async def pop_state(self, state_id: str):
+        if state_id not in self.__store:
+            _logger.warning("Access with wrong state_id: {}".format(state_id))
+            raise HTTPException(401)
+        result = self.__store[state_id]
+        del self.__store[state_id]
+        return result
+
+    async def create_signin_request(self, state: dict = None) -> SigninRequest:
+        sr = SigninRequest(await self.get_metadata(), self.__configuration)
+        if state is not None:
+            state = state.copy()
+        else:
+            state = {}
+        state["request"] = sr
+        state_id = sr.state_id
+        self.__store[state_id] = state
+        return sr
+
+    async def get_session(self, session_state_id: str):
+        return self.__store[session_state_id]

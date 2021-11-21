@@ -9,13 +9,18 @@ class SigninRequest(object):
     def __init__(self, metadata: Metadata, configuration: OpenIdConnectConfiguration):
         self.__metadata = metadata
         self.__configuration = configuration
+        self.__state_id = uuid.uuid4().hex
         self.__nonce = uuid.uuid4().hex
+
+    @property
+    def state_id(self):
+        return self.__state_id
 
     @property
     def nonce(self):
         return self.__nonce
 
-    async def signin_url(self, state: str):
+    async def signin_url(self):
         authorization_endpoint = self.__metadata.authorization_endpoint()
         return "{}?{}".format(
             authorization_endpoint,
@@ -26,7 +31,7 @@ class SigninRequest(object):
                     "response_type": self.__configuration.response_type,
                     "scope": self.__configuration.scope,
                     "nonce": self.__nonce,
-                    "state": state,
+                    "state": self.__state_id,
                 }
             ),
         )
