@@ -1,5 +1,3 @@
-import uuid
-
 import fastapi
 from fastapi import HTTPException
 
@@ -11,7 +9,7 @@ from .access import Access
 from .authenticationresult import AuthenticationResult
 from .openidconnectconfiguration import OpenIdConnectConfiguration
 from .openidconnectclient import OpenIdConnectClient
-from .utils import request_url, decode_jwt, abort
+from .utils import request_url, decode_jwt
 
 store = {}
 
