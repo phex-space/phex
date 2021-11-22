@@ -2,6 +2,7 @@ version: "3.8"
 
 volumes:
   postgresql:
+  mongodb:
 
 networks:
   dmz:
@@ -87,3 +88,18 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_USER_PASSWORD}
     volumes:
       - postgresql:/var/lib/postgresql
+
+  mongo:
+    image: mongo:bionic
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - data
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_USER_PASSWORD}
+    volumes:
+      - mongodb:/data
