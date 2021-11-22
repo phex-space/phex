@@ -1,7 +1,7 @@
 import fastapi
 from starlette.middleware.gzip import GZipMiddleware
 
-from phex import configuration, logging
+from phex import configuration, logging  # noqa F401
 from phex.authentication import authentication
 from phex.middleware.tracing import TracingMiddleware
 from phex.usermanagement import router as router_usermanagement

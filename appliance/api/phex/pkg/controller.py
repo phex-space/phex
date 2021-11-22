@@ -1,7 +1,7 @@
 import logging
 
 import pydantic
-from fastapi import HTTPException, logger
+from fastapi import HTTPException
 from pymongo.collection import Collection, ObjectId
 from pymongo.results import InsertOneResult, UpdateResult
 
