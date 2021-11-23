@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/appliance/api/.idea/api.iml" filepath="$PROJECT_DIR$/appliance/api/.idea/api.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/phex.iml" filepath="$PROJECT_DIR$/.idea/phex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appliance/packages/phexoidc/.idea/phexoidc.iml" filepath="$PROJECT_DIR$/appliance/packages/phexoidc/.idea/phexoidc.iml" />
     </modules>
   </component>
 </project>
