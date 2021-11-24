@@ -12,6 +12,7 @@ jwcrypto = "*"
 pytest = "*"
 pytest-asyncio = "*"
 requests = "*"
+pytest-mock = "*"
 
 [requires]
 python_version = "3.9"
