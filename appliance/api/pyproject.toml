@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "phexapi"
+version = "0.1.0"
+description = "phex.space API project based on FastAPI"
+authors = ["Christian Dein <phex@dein-hosting.de>"]
+license = "LGPL-2.1-or-later"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.70.0"
+python-dotenv = "^0.19.2"
+hypercorn = "^0.12.0"
+phexcore = {path = "../../packages/core"}
+psycopg2 = "^2.9.2"
+toml = "^0.10.2"
+phexsec = {path = "../../packages/security"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

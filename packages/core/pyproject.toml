@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "phexcore"
+version = "0.1.0"
+description = ""
+authors = ["Christian Dein <phex@dein-hosting.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.70.0"
+pydantic = "^1.8.2"
+SQLAlchemy = "^1.4.27"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-watch = "^4.2.0"
+pytest-asyncio = "^0.16.0"
+pytest-mock = "^3.6.1"
+pytest-cov = "^3.0.0"
+requests = "^2.26.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

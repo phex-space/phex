@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "phexsec"
+version = "0.1.0"
+description = ""
+authors = ["Christian Dein <phex@dein-hosting.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.70.0"
+jwcrypto = "^1.0"
+httpx = "^0.21.1"
+
+[tool.poetry.dev-dependencies]
+pytest-asyncio = "^0.16.0"
+pytest-mock = "^3.6.1"
+requests = "^2.26.0"
+pytest-cov = "^3.0.0"
+pytest = "^6.2.5"
+pytest-httpx = "^0.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

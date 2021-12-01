@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "appliance/api"
+		},
+		{
+			"path": "packages/core"
+		},
+		{
+			"path": "packages/security"
+		}
+	],
+	"settings": {
+		"python.formatting.provider": "black"
+	}
+}

@@ -2,6 +2,7 @@ version: "3.8"
 
 volumes:
   postgresql:
+  postgresql_data:
   mongodb:
 
 networks:
@@ -29,7 +30,6 @@ services:
 
   identity:
     image: jboss/keycloak:14.0.0
-    restart: always
     logging:
       options:
         max-size: "10m"
@@ -47,7 +47,9 @@ services:
       PROXY_ADDRESS_FORWARDING: "true"
 
   api:
-    build: ./appliance/api
+    build:
+      context: .
+      dockerfile: api.dockerfile
     logging:
       options:
         max-size: "10m"
@@ -58,7 +60,47 @@ services:
     environment:
       DEBUG: "true"
     volumes:
-      - ${PWD}/appliance/api/phex:/opt/app/phex
+      - ${PWD}/appliance/api:/opt/phex/api
+
+  # api_1_1:
+  #   build:
+  #     context: .
+  #     dockerfile: api.dockerfile
+  #   logging:
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "3"
+  #   networks:
+  #     - service
+  #     - data
+  #   environment:
+  #     DEBUG: "true"
+  #     VERSION: "1.1"
+  #   volumes:
+  #     - ${PWD}/appliance/api/.env.cdein:/opt/phex/api/.env.cdein
+  #     - ${PWD}/appliance/api/.env.development:/opt/phex/api/.env.development
+  #     - ${PWD}/appliance/api/pyproject.toml:/opt/phex/api/pyproject.toml
+  #     - ${PWD}/appliance/api/phexapi:/opt/phex/api/phexapi
+
+  # api_1_2:
+  #   build:
+  #     context: .
+  #     dockerfile: api.dockerfile
+  #   logging:
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "3"
+  #   networks:
+  #     - service
+  #     - data
+  #   environment:
+  #     DEBUG: "true"
+  #     VERSION: "1.2"
+  #   volumes:
+  #     - ${PWD}/appliance/api/.env.cdein:/opt/phex/api/.env.cdein
+  #     - ${PWD}/appliance/api/.env.development:/opt/phex/api/.env.development
+  #     - ${PWD}/appliance/api/pyproject.toml:/opt/phex/api/pyproject.toml
+  #     - ${PWD}/appliance/api/phexapi:/opt/phex/api/phexapi
 
 #  client:
 #    build: ./appliance/client
@@ -75,7 +117,6 @@ services:
 
   db:
     build: ./appliance/database
-    restart: always
     logging:
       options:
         max-size: "10m"
@@ -88,10 +129,10 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_USER_PASSWORD}
     volumes:
       - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
 
   mongo:
     image: mongo:bionic
-    restart: always
     logging:
       options:
         max-size: "10m"

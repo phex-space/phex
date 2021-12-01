@@ -1,0 +1,999 @@
+[
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "BaseHTTPMiddleware",
+        "importPath": "starlette.middleware.base",
+        "description": "starlette.middleware.base",
+        "isExtraImport": true,
+        "detail": "starlette.middleware.base",
+        "documentation": {}
+    },
+    {
+        "label": "trace_id_context",
+        "importPath": "phex.logging",
+        "description": "phex.logging",
+        "isExtraImport": true,
+        "detail": "phex.logging",
+        "documentation": {}
+    },
+    {
+        "label": "fastapi",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "starlette.requests",
+        "description": "starlette.requests",
+        "isExtraImport": true,
+        "detail": "starlette.requests",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "starlette.requests",
+        "description": "starlette.requests",
+        "isExtraImport": true,
+        "detail": "starlette.requests",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "starlette.requests",
+        "description": "starlette.requests",
+        "isExtraImport": true,
+        "detail": "starlette.requests",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "starlette.requests",
+        "description": "starlette.requests",
+        "isExtraImport": true,
+        "detail": "starlette.requests",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "starlette.responses",
+        "description": "starlette.responses",
+        "isExtraImport": true,
+        "detail": "starlette.responses",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "starlette.responses",
+        "description": "starlette.responses",
+        "isExtraImport": true,
+        "detail": "starlette.responses",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "starlette.responses",
+        "description": "starlette.responses",
+        "isExtraImport": true,
+        "detail": "starlette.responses",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnectClient",
+        "importPath": "phex.oidc.openidconnectclient",
+        "description": "phex.oidc.openidconnectclient",
+        "isExtraImport": true,
+        "detail": "phex.oidc.openidconnectclient",
+        "documentation": {}
+    },
+    {
+        "label": "decode_jwt",
+        "importPath": "phex.oidc.utils",
+        "description": "phex.oidc.utils",
+        "isExtraImport": true,
+        "detail": "phex.oidc.utils",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "phex.oidc.utils",
+        "description": "phex.oidc.utils",
+        "isExtraImport": true,
+        "detail": "phex.oidc.utils",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "jwcrypto.jwk",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jwcrypto.jwk",
+        "description": "jwcrypto.jwk",
+        "detail": "jwcrypto.jwk",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.parse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "jwcrypto.jwt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jwcrypto.jwt",
+        "description": "jwcrypto.jwt",
+        "detail": "jwcrypto.jwt",
+        "documentation": {}
+    },
+    {
+        "label": "pydantic",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Collection",
+        "importPath": "pymongo.collection",
+        "description": "pymongo.collection",
+        "isExtraImport": true,
+        "detail": "pymongo.collection",
+        "documentation": {}
+    },
+    {
+        "label": "ObjectId",
+        "importPath": "pymongo.collection",
+        "description": "pymongo.collection",
+        "isExtraImport": true,
+        "detail": "pymongo.collection",
+        "documentation": {}
+    },
+    {
+        "label": "ObjectId",
+        "importPath": "pymongo.collection",
+        "description": "pymongo.collection",
+        "isExtraImport": true,
+        "detail": "pymongo.collection",
+        "documentation": {}
+    },
+    {
+        "label": "InsertOneResult",
+        "importPath": "pymongo.results",
+        "description": "pymongo.results",
+        "isExtraImport": true,
+        "detail": "pymongo.results",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateResult",
+        "importPath": "pymongo.results",
+        "description": "pymongo.results",
+        "isExtraImport": true,
+        "detail": "pymongo.results",
+        "documentation": {}
+    },
+    {
+        "label": "mongodb",
+        "importPath": "phex",
+        "description": "phex",
+        "isExtraImport": true,
+        "detail": "phex",
+        "documentation": {}
+    },
+    {
+        "label": "configuration",
+        "importPath": "phex",
+        "description": "phex",
+        "isExtraImport": true,
+        "detail": "phex",
+        "documentation": {}
+    },
+    {
+        "label": "approve",
+        "importPath": "phex.authentication",
+        "description": "phex.authentication",
+        "isExtraImport": true,
+        "detail": "phex.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "approve",
+        "importPath": "phex.authentication",
+        "description": "phex.authentication",
+        "isExtraImport": true,
+        "detail": "phex.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "Access",
+        "importPath": "phex.oidc",
+        "description": "phex.oidc",
+        "isExtraImport": true,
+        "detail": "phex.oidc",
+        "documentation": {}
+    },
+    {
+        "label": "Access",
+        "importPath": "phex.oidc",
+        "description": "phex.oidc",
+        "isExtraImport": true,
+        "detail": "phex.oidc",
+        "documentation": {}
+    },
+    {
+        "label": "Consent",
+        "importPath": "phex.oidc",
+        "description": "phex.oidc",
+        "isExtraImport": true,
+        "detail": "phex.oidc",
+        "documentation": {}
+    },
+    {
+        "label": "Access",
+        "importPath": "phex.oidc",
+        "description": "phex.oidc",
+        "isExtraImport": true,
+        "detail": "phex.oidc",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationResult",
+        "importPath": "phex.oidc",
+        "description": "phex.oidc",
+        "isExtraImport": true,
+        "detail": "phex.oidc",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnect",
+        "importPath": "phex.oidc",
+        "description": "phex.oidc",
+        "isExtraImport": true,
+        "detail": "phex.oidc",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnectConfiguration",
+        "importPath": "phex.oidc",
+        "description": "phex.oidc",
+        "isExtraImport": true,
+        "detail": "phex.oidc",
+        "documentation": {}
+    },
+    {
+        "label": "controller",
+        "importPath": "phex.pkg",
+        "description": "phex.pkg",
+        "isExtraImport": true,
+        "detail": "phex.pkg",
+        "documentation": {}
+    },
+    {
+        "label": "PhexBaseModel",
+        "importPath": "phex.mongodb",
+        "description": "phex.mongodb",
+        "isExtraImport": true,
+        "detail": "phex.mongodb",
+        "documentation": {}
+    },
+    {
+        "label": "functools",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "functools",
+        "description": "functools",
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "contextvars",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "contextvars",
+        "description": "contextvars",
+        "detail": "contextvars",
+        "documentation": {}
+    },
+    {
+        "label": "motor.motor_asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "motor.motor_asyncio",
+        "description": "motor.motor_asyncio",
+        "detail": "motor.motor_asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "SecurityBase",
+        "importPath": "fastapi.security.base",
+        "description": "fastapi.security.base",
+        "isExtraImport": true,
+        "detail": "fastapi.security.base",
+        "documentation": {}
+    },
+    {
+        "label": "get_authorization_scheme_param",
+        "importPath": "fastapi.security.utils",
+        "description": "fastapi.security.utils",
+        "isExtraImport": true,
+        "detail": "fastapi.security.utils",
+        "documentation": {}
+    },
+    {
+        "label": "jwk",
+        "importPath": "jwcrypto",
+        "description": "jwcrypto",
+        "isExtraImport": true,
+        "detail": "jwcrypto",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jwcrypto",
+        "description": "jwcrypto",
+        "isExtraImport": true,
+        "detail": "jwcrypto",
+        "documentation": {}
+    },
+    {
+        "label": "jwk",
+        "importPath": "jwcrypto",
+        "description": "jwcrypto",
+        "isExtraImport": true,
+        "detail": "jwcrypto",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "TestClient",
+        "importPath": "starlette.testclient",
+        "description": "starlette.testclient",
+        "isExtraImport": true,
+        "detail": "starlette.testclient",
+        "documentation": {}
+    },
+    {
+        "label": "TestClient",
+        "importPath": "starlette.testclient",
+        "description": "starlette.testclient",
+        "isExtraImport": true,
+        "detail": "starlette.testclient",
+        "documentation": {}
+    },
+    {
+        "label": "AsyncMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MockerFixture",
+        "importPath": "pytest_mock",
+        "description": "pytest_mock",
+        "isExtraImport": true,
+        "detail": "pytest_mock",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnect",
+        "importPath": "phexoidc",
+        "description": "phexoidc",
+        "isExtraImport": true,
+        "detail": "phexoidc",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnectClient",
+        "importPath": "phexoidc",
+        "description": "phexoidc",
+        "isExtraImport": true,
+        "detail": "phexoidc",
+        "documentation": {}
+    },
+    {
+        "label": "Grant",
+        "importPath": "phexoidc",
+        "description": "phexoidc",
+        "isExtraImport": true,
+        "detail": "phexoidc",
+        "documentation": {}
+    },
+    {
+        "label": "TracingMiddleware",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.middleware.tracing",
+        "description": "appliance.api.bak.phex.middleware.tracing",
+        "peekOfCode": "class TracingMiddleware(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        trace_id = request.headers.get(\"X-Trace-Id\", None)\n        if trace_id is None:\n            trace_id = str(uuid.uuid4())\n        trace_id_context.set(trace_id)\n        response = await call_next(request)\n        response.headers[\"X-Trace-Id\"] = trace_id\n        return response",
+        "detail": "appliance.api.bak.phex.middleware.tracing",
+        "documentation": {}
+    },
+    {
+        "label": "register_callback",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.oidc._routes",
+        "description": "appliance.api.bak.phex.oidc._routes",
+        "peekOfCode": "def register_callback(app: fastapi.FastAPI, client: OpenIdConnectClient, store: dict):\n    @app.get(\"/oidc/callback\")\n    async def oidc_callback(request: Request, response: Response):\n        state_id = request.query_params[\"state\"]\n        code = request.query_params[\"code\"]\n        state = await client.pop_state(state_id)\n        sr = state[\"request\"]\n        tokens = await client.get_token_by_code(code)\n        access_token = tokens.get(\"access_token\")\n        expires_in = tokens.get(\"expires_in\")",
+        "detail": "appliance.api.bak.phex.oidc._routes",
+        "documentation": {}
+    },
+    {
+        "label": "Access",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.access",
+        "description": "appliance.api.bak.phex.oidc.access",
+        "peekOfCode": "class Access(object):\n    def __init__(self, scope: str, resource: str):\n        self.__scope = scope\n        self.__resource = resource\n        self.__str = f\"{self.resource}#{self.scope}\"\n    @property\n    def scope(self):\n        return self.__scope\n    @property\n    def resource(self):",
+        "detail": "appliance.api.bak.phex.oidc.access",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationResult",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.authenticationresult",
+        "description": "appliance.api.bak.phex.oidc.authenticationresult",
+        "peekOfCode": "class AuthenticationResult(object):\n    def __init__(self, access_token: str, decoded_token: dict):\n        self.__access_token = access_token\n        self.__user = decoded_token\n    @property\n    def access_token(self):\n        return self.__access_token\n    @property\n    def user(self):\n        return self.__user",
+        "detail": "appliance.api.bak.phex.oidc.authenticationresult",
+        "documentation": {}
+    },
+    {
+        "label": "Consent",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.consent",
+        "description": "appliance.api.bak.phex.oidc.consent",
+        "peekOfCode": "class Consent(object):\n    def __init__(self, requests_access=None, permissions=None):\n        if requests_access is None:\n            requests_access = []\n        if permissions is None:\n            permissions = []\n        for access in requests_access:\n            setattr(self, f\"can_{access.scope}_{access.resource}\", False)\n        for permission in permissions:\n            resource_name = permission[\"rsname\"]",
+        "detail": "appliance.api.bak.phex.oidc.consent",
+        "documentation": {}
+    },
+    {
+        "label": "Metadata",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.metadata",
+        "description": "appliance.api.bak.phex.oidc.metadata",
+        "peekOfCode": "class Metadata(object):\n    def __init__(self, data: dict):\n        self.__data = data\n    def authorization_endpoint(self):\n        return self.__data[\"authorization_endpoint\"]\n    def issuer(self):\n        return self.__data[\"issuer\"]\n    def userinfo_endpoint(self):\n        return self.__data[\"userinfo_endpoint\"]\n    def token_endpoint(self):",
+        "detail": "appliance.api.bak.phex.oidc.metadata",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnect",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.openidconnect",
+        "description": "appliance.api.bak.phex.oidc.openidconnect",
+        "peekOfCode": "class OpenIdConnect(object):\n    def __init__(self, configuration: OpenIdConnectConfiguration):\n        self.__client = OpenIdConnectClient(configuration)\n    def engage(self, app: fastapi.FastAPI):\n        register_callback(app, self.__client, store)\n    async def __call__(self, request: Request, response: Response):\n        authorization: str = request.headers.get(\"Authorization\")\n        if not authorization:\n            authorization = request.cookies.get(\"phex_auth\")\n        if not authorization:",
+        "detail": "appliance.api.bak.phex.oidc.openidconnect",
+        "documentation": {}
+    },
+    {
+        "label": "store",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.oidc.openidconnect",
+        "description": "appliance.api.bak.phex.oidc.openidconnect",
+        "peekOfCode": "store = {}\nclass OpenIdConnect(object):\n    def __init__(self, configuration: OpenIdConnectConfiguration):\n        self.__client = OpenIdConnectClient(configuration)\n    def engage(self, app: fastapi.FastAPI):\n        register_callback(app, self.__client, store)\n    async def __call__(self, request: Request, response: Response):\n        authorization: str = request.headers.get(\"Authorization\")\n        if not authorization:\n            authorization = request.cookies.get(\"phex_auth\")",
+        "detail": "appliance.api.bak.phex.oidc.openidconnect",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnectClient",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.openidconnectclient",
+        "description": "appliance.api.bak.phex.oidc.openidconnectclient",
+        "peekOfCode": "class OpenIdConnectClient(object):\n    def __init__(self, configuration: OpenIdConnectConfiguration):\n        self.__configuration = configuration\n        self.__http: httpx.AsyncClient = httpx.AsyncClient()\n        self.__metadata: Optional[Metadata] = None\n        self.__store = {}\n    async def dispose(self):\n        await self.__http.aclose()\n    @property\n    def configuration(self):",
+        "detail": "appliance.api.bak.phex.oidc.openidconnectclient",
+        "documentation": {}
+    },
+    {
+        "label": "_logger",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.oidc.openidconnectclient",
+        "description": "appliance.api.bak.phex.oidc.openidconnectclient",
+        "peekOfCode": "_logger = logging.getLogger(__name__)\nclass OpenIdConnectClient(object):\n    def __init__(self, configuration: OpenIdConnectConfiguration):\n        self.__configuration = configuration\n        self.__http: httpx.AsyncClient = httpx.AsyncClient()\n        self.__metadata: Optional[Metadata] = None\n        self.__store = {}\n    async def dispose(self):\n        await self.__http.aclose()\n    @property",
+        "detail": "appliance.api.bak.phex.oidc.openidconnectclient",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnectConfiguration",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.openidconnectconfiguration",
+        "description": "appliance.api.bak.phex.oidc.openidconnectconfiguration",
+        "peekOfCode": "class OpenIdConnectConfiguration(object):\n    def __init__(\n        self,\n        issuer: str,\n        client_id: str,\n        secret: str,\n        redirect_uri: str,\n        response_type: str,\n        scope: str,\n    ):",
+        "detail": "appliance.api.bak.phex.oidc.openidconnectconfiguration",
+        "documentation": {}
+    },
+    {
+        "label": "SigninRequest",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.oidc.signinrequest",
+        "description": "appliance.api.bak.phex.oidc.signinrequest",
+        "peekOfCode": "class SigninRequest(object):\n    def __init__(self, metadata: Metadata, configuration: OpenIdConnectConfiguration):\n        self.__metadata = metadata\n        self.__configuration = configuration\n        self.__state_id = uuid.uuid4().hex\n        self.__nonce = uuid.uuid4().hex\n    @property\n    def state_id(self):\n        return self.__state_id\n    @property",
+        "detail": "appliance.api.bak.phex.oidc.signinrequest",
+        "documentation": {}
+    },
+    {
+        "label": "request_url",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.oidc.utils",
+        "description": "appliance.api.bak.phex.oidc.utils",
+        "peekOfCode": "def request_url(request: Request):\n    url = str(request.url)\n    if \"x-forwarded-proto\" in request.headers:\n        scheme = request.headers.get(\"x-forwarded-proto\", request.url.scheme)\n        return url.replace(request.url.scheme + \":\", scheme + \":\")\n    return url\ndef get_string_value(data: dict, name: str, default_value: str = None) -> str:\n    if not data:\n        return default_value\n    value = data.get(name, default_value)",
+        "detail": "appliance.api.bak.phex.oidc.utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_string_value",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.oidc.utils",
+        "description": "appliance.api.bak.phex.oidc.utils",
+        "peekOfCode": "def get_string_value(data: dict, name: str, default_value: str = None) -> str:\n    if not data:\n        return default_value\n    value = data.get(name, default_value)\n    if not value:\n        return default_value\n    if isinstance(value, (list, tuple)):\n        return str(value[0])\n    return str(value)\ndef abort(status_code: int, error: str, message: str = None):",
+        "detail": "appliance.api.bak.phex.oidc.utils",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.oidc.utils",
+        "description": "appliance.api.bak.phex.oidc.utils",
+        "peekOfCode": "def abort(status_code: int, error: str, message: str = None):\n    detail = {\"error\": error}\n    if message:\n        detail[\"message\"] = message\n    raise HTTPException(status_code, detail=detail)\ndef decode_jwt(jwt: str, jwks: jwcrypto.jwk.JWKSet):\n    jw_token = jwcrypto.jwt.JWT(jwt=jwt, key=jwks)\n    if isinstance(jw_token.claims, str):\n        return json.loads(jw_token.claims)\n    return jw_token.claims",
+        "detail": "appliance.api.bak.phex.oidc.utils",
+        "documentation": {}
+    },
+    {
+        "label": "decode_jwt",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.oidc.utils",
+        "description": "appliance.api.bak.phex.oidc.utils",
+        "peekOfCode": "def decode_jwt(jwt: str, jwks: jwcrypto.jwk.JWKSet):\n    jw_token = jwcrypto.jwt.JWT(jwt=jwt, key=jwks)\n    if isinstance(jw_token.claims, str):\n        return json.loads(jw_token.claims)\n    return jw_token.claims",
+        "detail": "appliance.api.bak.phex.oidc.utils",
+        "documentation": {}
+    },
+    {
+        "label": "_logger",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.pkg.controller",
+        "description": "appliance.api.bak.phex.pkg.controller",
+        "peekOfCode": "_logger = logging.getLogger(__name__)\nasync def list_packages() -> list[Package]:\n    _logger.info(\"List packages\")\n    database = mongodb.database()\n    packages: Collection = database.packages\n    result = []\n    async for doc in packages.find():\n        _logger.info(doc)\n        result.append(pydantic.parse_obj_as(Package, doc))\n    return result",
+        "detail": "appliance.api.bak.phex.pkg.controller",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.pkg.routes",
+        "description": "appliance.api.bak.phex.pkg.routes",
+        "peekOfCode": "router = fastapi.APIRouter(prefix=\"/pkg\")\n@router.get(\"\", response_model=list[Package])\nasync def list_packages(_=Depends(approve(Access(\"read\", \"package\")))) -> list[Package]:\n    return await controller.list_packages()\n@router.post(\"\", response_model=Package)\nasync def create_package(\n    package: Package,\n    _=Depends(approve(Access(\"read\", \"package\"), Access(\"write\", \"package\"))),\n) -> Package:\n    return await controller.create_package(package)",
+        "detail": "appliance.api.bak.phex.pkg.routes",
+        "documentation": {}
+    },
+    {
+        "label": "Package",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.pkg.schema",
+        "description": "appliance.api.bak.phex.pkg.schema",
+        "peekOfCode": "class Package(PhexBaseModel):\n    name: str\n    version: Optional[str]\n    status: str = \"created\"",
+        "detail": "appliance.api.bak.phex.pkg.schema",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.usermanagement.routes",
+        "description": "appliance.api.bak.phex.usermanagement.routes",
+        "peekOfCode": "router = fastapi.APIRouter(prefix=\"/user\")\n@router.get(\"\")\nasync def list_user(\n    consent: Consent = Depends(\n        approve(Access(\"read\", \"package\"), Access(\"write\", \"package\"))\n    )\n):\n    return {\"consent\": consent}",
+        "detail": "appliance.api.bak.phex.usermanagement.routes",
+        "documentation": {}
+    },
+    {
+        "label": "approve",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.authentication",
+        "description": "appliance.api.bak.phex.authentication",
+        "peekOfCode": "def approve(*access: Access):\n    async def do_approval(auth: AuthenticationResult = Depends(authentication)):\n        return await authentication.approve_access(auth.access_token, \"api\", access)\n    return do_approval",
+        "detail": "appliance.api.bak.phex.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.authentication",
+        "description": "appliance.api.bak.phex.authentication",
+        "peekOfCode": "config = OpenIdConnectConfiguration(\n    issuer=\"https://identity.phex.local/auth/realms/phex\",\n    client_id=\"api\",\n    secret=\"3bc158ef-ac3f-458e-97c0-1d7765e91756\",\n    redirect_uri=\"https://api.phex.local/oidc/callback\",\n    response_type=\"code\",\n    scope=\"openid\",\n)\nauthentication: OpenIdConnect = OpenIdConnect(config)\ndef approve(*access: Access):",
+        "detail": "appliance.api.bak.phex.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "Configuration",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.configuration",
+        "description": "appliance.api.bak.phex.configuration",
+        "peekOfCode": "class Configuration(pydantic.BaseSettings):\n    debug: bool = False\n    oidc_issuer: str = \"identity.phex.local\"\n    oidc_url: str = \"https://identity.phex.local/auth/realms/phex\"\n    mongodb_url: str = \"mongodb://mongo:27017\"\n    mongodb_user: str = \"phex\"\n    mongodb_user_password: str = \"242t3m\"\n    mongodb_database: str = \"phex\"\n@functools.lru_cache()\ndef get() -> Configuration:",
+        "detail": "appliance.api.bak.phex.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "get",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.configuration",
+        "description": "appliance.api.bak.phex.configuration",
+        "peekOfCode": "def get() -> Configuration:\n    return Configuration()",
+        "detail": "appliance.api.bak.phex.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "PhexLogRecord",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.logging",
+        "description": "appliance.api.bak.phex.logging",
+        "peekOfCode": "class PhexLogRecord(logging.LogRecord):\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.traceid = trace_id_context.get()\nlogging.setLogRecordFactory(PhexLogRecord)",
+        "detail": "appliance.api.bak.phex.logging",
+        "documentation": {}
+    },
+    {
+        "label": "trace_id_context",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.logging",
+        "description": "appliance.api.bak.phex.logging",
+        "peekOfCode": "trace_id_context = contextvars.ContextVar(\"X-Trace-Id\", default=\"unknown\")\nlogging.basicConfig(\n    level=logging.DEBUG,\n    format=\"[%(asctime)s]:[%(traceid)s]:\" + logging.BASIC_FORMAT,\n    style='%',\n)\nclass PhexLogRecord(logging.LogRecord):\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.traceid = trace_id_context.get()",
+        "detail": "appliance.api.bak.phex.logging",
+        "documentation": {}
+    },
+    {
+        "label": "PhexObjectId",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.mongodb",
+        "description": "appliance.api.bak.phex.mongodb",
+        "peekOfCode": "class PhexObjectId(ObjectId):\n    @classmethod\n    def __get_validators__(cls):\n        yield cls.validate\n    @classmethod\n    def validate(cls, v):\n        if not ObjectId.is_valid(v):\n            raise ValueError(\"invalid objectid\")\n        return ObjectId(v)\n    @classmethod",
+        "detail": "appliance.api.bak.phex.mongodb",
+        "documentation": {}
+    },
+    {
+        "label": "PhexBaseModel",
+        "kind": 6,
+        "importPath": "appliance.api.bak.phex.mongodb",
+        "description": "appliance.api.bak.phex.mongodb",
+        "peekOfCode": "class PhexBaseModel(BaseModel):\n    id: PhexObjectId = Field(default_factory=PhexObjectId, alias=\"_id\")\n    class Config:\n        allow_population_by_field_name = True\n        arbitrary_types_allowed = True\n        json_encoders = {ObjectId: str}",
+        "detail": "appliance.api.bak.phex.mongodb",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.mongodb",
+        "description": "appliance.api.bak.phex.mongodb",
+        "peekOfCode": "def client():\n    global _client\n    if _client is None:\n        config = configuration.get()\n        _client = motor.motor_asyncio.AsyncIOMotorClient(\n            config.mongodb_url,\n            username=config.mongodb_user,\n            password=config.mongodb_user_password,\n        )\n    return _client",
+        "detail": "appliance.api.bak.phex.mongodb",
+        "documentation": {}
+    },
+    {
+        "label": "database",
+        "kind": 2,
+        "importPath": "appliance.api.bak.phex.mongodb",
+        "description": "appliance.api.bak.phex.mongodb",
+        "peekOfCode": "def database():\n    return client()[configuration.get().mongodb_database]\nclass PhexObjectId(ObjectId):\n    @classmethod\n    def __get_validators__(cls):\n        yield cls.validate\n    @classmethod\n    def validate(cls, v):\n        if not ObjectId.is_valid(v):\n            raise ValueError(\"invalid objectid\")",
+        "detail": "appliance.api.bak.phex.mongodb",
+        "documentation": {}
+    },
+    {
+        "label": "_client",
+        "kind": 5,
+        "importPath": "appliance.api.bak.phex.mongodb",
+        "description": "appliance.api.bak.phex.mongodb",
+        "peekOfCode": "_client = None\ndef client():\n    global _client\n    if _client is None:\n        config = configuration.get()\n        _client = motor.motor_asyncio.AsyncIOMotorClient(\n            config.mongodb_url,\n            username=config.mongodb_user,\n            password=config.mongodb_user_password,\n        )",
+        "detail": "appliance.api.bak.phex.mongodb",
+        "documentation": {}
+    },
+    {
+        "label": "Access",
+        "kind": 6,
+        "importPath": "appliance.packages.phexoidc.phexoidc.access",
+        "description": "appliance.packages.phexoidc.phexoidc.access",
+        "peekOfCode": "class Access(object):\n    def __init__(self, scope: str, resource: str):\n        self.__scope = scope\n        self.__resource = resource\n        self.__str = f\"{self.resource}#{self.scope}\"\n    @property\n    def scope(self):\n        return self.__scope\n    @property\n    def resource(self):",
+        "detail": "appliance.packages.phexoidc.phexoidc.access",
+        "documentation": {}
+    },
+    {
+        "label": "Grant",
+        "kind": 6,
+        "importPath": "appliance.packages.phexoidc.phexoidc.grant",
+        "description": "appliance.packages.phexoidc.phexoidc.grant",
+        "peekOfCode": "class Grant(object):\n    def __init__(self, access_token: str, decoded_token: dict):\n        self.__access_token = access_token\n        self.__user = decoded_token\n    @property\n    def access_token(self):\n        return self.__access_token\n    @property\n    def user(self):\n        return self.__user",
+        "detail": "appliance.packages.phexoidc.phexoidc.grant",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnect",
+        "kind": 6,
+        "importPath": "appliance.packages.phexoidc.phexoidc.openidconnect",
+        "description": "appliance.packages.phexoidc.phexoidc.openidconnect",
+        "peekOfCode": "class OpenIdConnect(SecurityBase):\n    def __init__(self, client: OpenIdConnectClient, scheme_name: str = None):\n        self.scheme_name = scheme_name or self.__class__.__name__\n        self.__client = client\n    @property\n    def client(self):\n        return self.__client\n    async def authenticate(self, request: Request, response: Response):\n        authorization: str = request.headers.get(\"Authorization\")\n        if not authorization:",
+        "detail": "appliance.packages.phexoidc.phexoidc.openidconnect",
+        "documentation": {}
+    },
+    {
+        "label": "_logger",
+        "kind": 5,
+        "importPath": "appliance.packages.phexoidc.phexoidc.openidconnect",
+        "description": "appliance.packages.phexoidc.phexoidc.openidconnect",
+        "peekOfCode": "_logger = logging.getLogger(__name__)\nclass OpenIdConnect(SecurityBase):\n    def __init__(self, client: OpenIdConnectClient, scheme_name: str = None):\n        self.scheme_name = scheme_name or self.__class__.__name__\n        self.__client = client\n    @property\n    def client(self):\n        return self.__client\n    async def authenticate(self, request: Request, response: Response):\n        authorization: str = request.headers.get(\"Authorization\")",
+        "detail": "appliance.packages.phexoidc.phexoidc.openidconnect",
+        "documentation": {}
+    },
+    {
+        "label": "OpenIdConnectClient",
+        "kind": 6,
+        "importPath": "appliance.packages.phexoidc.phexoidc.openidconnectclient",
+        "description": "appliance.packages.phexoidc.phexoidc.openidconnectclient",
+        "peekOfCode": "class OpenIdConnectClient:\n    def __init__(self):\n        self.__keyset: Optional[jwk.JWKSet] = None\n    async def keyset(self) -> jwk.JWKSet:\n        return self.__keyset",
+        "detail": "appliance.packages.phexoidc.phexoidc.openidconnectclient",
+        "documentation": {}
+    },
+    {
+        "label": "decode_jwt",
+        "kind": 2,
+        "importPath": "appliance.packages.phexoidc.phexoidc.utils",
+        "description": "appliance.packages.phexoidc.phexoidc.utils",
+        "peekOfCode": "def decode_jwt(\n    jwt: str,\n    jwks: Union[jwcrypto.jwk.JWK, jwcrypto.jwk.JWKSet],\n    check_claims: dict = None,\n):\n    jw_token = jwcrypto.jwt.JWT(jwt=jwt, key=jwks, check_claims=check_claims)\n    if isinstance(jw_token.claims, str):\n        return json.loads(jw_token.claims)\n    return jw_token.claims",
+        "detail": "appliance.packages.phexoidc.phexoidc.utils",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 2,
+        "importPath": "appliance.packages.phexoidc.tests.conftest",
+        "description": "appliance.packages.phexoidc.tests.conftest",
+        "peekOfCode": "def app():\n    test_app = FastAPI()\n    yield test_app\n@pytest.fixture()\ndef client(app):\n    return TestClient(app)",
+        "detail": "appliance.packages.phexoidc.tests.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "appliance.packages.phexoidc.tests.conftest",
+        "description": "appliance.packages.phexoidc.tests.conftest",
+        "peekOfCode": "def client(app):\n    return TestClient(app)",
+        "detail": "appliance.packages.phexoidc.tests.conftest",
+        "documentation": {}
+    }
+]
