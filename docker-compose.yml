@@ -61,6 +61,8 @@ services:
       DEBUG: "true"
     volumes:
       - ${PWD}/appliance/api:/opt/phex/api
+      - ${PWD}/packages/core/phexcore:/venv/lib/python3.9/site-packages/phexcore
+      - ${PWD}/packages/security/phexsec:/venv/lib/python3.9/site-packages/phexsec
 
   # api_1_1:
   #   build:

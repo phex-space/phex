@@ -64,10 +64,16 @@ async def _execute(
     try:
         if hasattr(module, name):
             callable = getattr(module, name)
+            _logger.debug("Calling '{}' of '{}'".format(name, module.__name__))
             if asyncio.iscoroutinefunction(callable):
-                return await callable(*args, **kwargs)
+                result = await callable(*args, **kwargs)
             else:
-                return callable(*args, **kwargs)
+                result = callable(*args, **kwargs)
+            if result is not None:
+                _logger.debug("Called '{}' of '{}' with result '{}'".format(name, module.__name__, repr(result)))
+            else:
+                _logger.debug("Called '{}' of '{}'".format(name, module.__name__))
+            return result
     except Exception:
         if suppress_errors:
             _logger.error("Failed calling '{}' of '{}'".format(name, module.__name__))
