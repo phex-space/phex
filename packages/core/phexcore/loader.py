@@ -76,6 +76,6 @@ async def _execute(
             return result
     except Exception:
         if suppress_errors:
-            _logger.error("Failed calling '{}' of '{}'".format(name, module.__name__))
+            _logger.error("Failed calling '{}' of '{}'".format(name, module.__name__), exc_info=True)
             return
         raise
