@@ -56,15 +56,30 @@ def emit(event_type: str, *args, **kwargs):
     )
     _async_event_queue.put({"type": event_type, "args": args, "kwargs": kwargs})
     try:
-        if event_type not in _callbacks:
-            return
-        for callback in _callbacks[event_type]:
-            try:
-                callback(*args, **kwargs)
-            except:
-                _logger.error("Error firing event '{}'.".format(callback.__name__))
+        _emit(event_type, args, kwargs)
     finally:
         _logger.debug("Emitted event '{}'.".format(event_type))
+
+
+async def aemit(event_type: str, *args, **kwargs):
+    _logger.debug(
+        "Asynchronous emitting event '{}'. args: {} - kwargs: {}".format(event_type, args, kwargs)
+    )
+    try:
+        _emit(event_type, args, kwargs)
+        await _emit_async(event_type, args, kwargs)
+    finally:
+        _logger.debug("Asynchronous emitted event '{}'.".format(event_type))
+
+
+def _emit(event_type: str, args, kwargs):
+    if event_type not in _callbacks:
+        return
+    for callback in _callbacks[event_type]:
+        try:
+            callback(*args, **kwargs)
+        except:
+            _logger.error("Error firing event '{}'.".format(callback.__name__))
 
 
 async def _emit_async(event_type: str, args, kwargs):
@@ -82,18 +97,13 @@ async def _emit_async(event_type: str, args, kwargs):
 
 def _async_event_worker():
     loop = asyncio.new_event_loop()
-    try:
-        while True:
-            event_data = _async_event_queue.get()
-            _logger.debug("Realease asynchronous event: {}".format(_async_callbacks))
-            loop.run_until_complete(
-                _emit_async(
-                    event_data["type"], event_data["args"], event_data["kwargs"]
-                )
-            )
-            _async_event_queue.task_done()
-    finally:
-        loop.close()  # pragma: nocover
+    while True:
+        event_data = _async_event_queue.get()
+        _logger.debug("Realease asynchronous event: {}".format(_async_callbacks))
+        loop.run_until_complete(
+            _emit_async(event_data["type"], event_data["args"], event_data["kwargs"])
+        )
+        _async_event_queue.task_done()
 
 
 threading.Thread(target=_async_event_worker, daemon=True).start()

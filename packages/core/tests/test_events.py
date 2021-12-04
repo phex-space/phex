@@ -80,6 +80,31 @@ async def test_event_subscribe_asynchronous(mocker: MockFixture):
 
 
 @pytest.mark.asyncio
+async def test_async_event_subscribe_asynchronous(mocker: MockFixture):
+    first = None
+    second = None
+
+    async def _first_func():
+        return "Some"
+
+    task = asyncio.create_task(_first_func())
+
+    async def callback(_second):
+        nonlocal first, second
+        first = await task
+        second = _second
+
+    subscription = events.subscribe("test_event", callback)
+
+    await events.aemit("test_event", "args")
+
+    assert first == "Some"
+    assert second == "args"
+
+    subscription.unsubscribe()
+
+
+@pytest.mark.asyncio
 async def test_event_throw_exception_asynchronous(mocker: MockFixture):
     first = None
     second = None
