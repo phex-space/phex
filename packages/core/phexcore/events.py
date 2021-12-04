@@ -5,6 +5,8 @@ import queue
 import threading
 import typing
 
+import pydantic
+
 _logger = logging.getLogger(__name__)
 
 _callbacks = dict()
@@ -12,20 +14,17 @@ _async_callbacks = dict()
 _async_event_queue = queue.Queue()
 
 
-class Subscription:
-    def __init__(
-        self, event_type: str, callback: typing.Callable, asynchronous: bool
-    ) -> None:
-        self.__event_type = event_type
-        self.__callback = callback
-        self.__asynchronous = asynchronous
+class Subscription(pydantic.BaseModel):
+    event_type: str
+    callback: typing.Callable
+    asynchronous: bool
 
     def unsubscribe(self):
-        if self.__asynchronous:
-            handlers = _async_callbacks.get(self.__event_type, [])
+        if self.asynchronous:
+            handlers = _async_callbacks.get(self.event_type, [])
         else:
-            handlers = _callbacks.get(self.__event_type, [])
-        handlers.remove(self.__callback)
+            handlers = _callbacks.get(self.event_type, [])
+        handlers.remove(self.callback)
 
 
 def subscribe(event_type: str, callback: typing.Callable) -> Subscription:
@@ -47,7 +46,7 @@ def subscribe(event_type: str, callback: typing.Callable) -> Subscription:
     if event_type not in handlers:
         handlers[event_type] = []
     handlers[event_type].append(callback)
-    return Subscription(event_type, callback, asynchronous)
+    return Subscription(event_type=event_type, callback=callback, asynchronous=asynchronous)
 
 
 def emit(event_type: str, *args, **kwargs):
@@ -63,7 +62,9 @@ def emit(event_type: str, *args, **kwargs):
 
 async def aemit(event_type: str, *args, **kwargs):
     _logger.debug(
-        "Asynchronous emitting event '{}'. args: {} - kwargs: {}".format(event_type, args, kwargs)
+        "Asynchronous emitting event '{}'. args: {} - kwargs: {}".format(
+            event_type, args, kwargs
+        )
     )
     try:
         _emit(event_type, args, kwargs)

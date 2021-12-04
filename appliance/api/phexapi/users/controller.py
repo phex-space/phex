@@ -37,12 +37,6 @@ class UserService(object):
         session.refresh(user)
         return schema.UserObject(**user._asdict())
 
-    async def _get_user(self, session: sqlalchemy.orm.Session, id: str) -> models.User:
-        user = session.query(models.User).get(id)
-        if user is None:
-            raise HTTPException(404, detail="User not found")
-        return user
-
     async def handle_authorized_user(self, new_user: schema.UserCreate):
         with services.get("database").new_session() as session:
             user = session.query(models.User).get(new_user.id)
@@ -52,6 +46,12 @@ class UserService(object):
             elif self._should_update(user, new_user):
                 user = await self.update(session, new_user.id, new_user)
                 _logger.debug("User updated: {}".format(user))
+
+    async def _get_user(self, session: sqlalchemy.orm.Session, id: str) -> models.User:
+        user = session.query(models.User).get(id)
+        if user is None:
+            raise HTTPException(404, detail="User not found")
+        return user
 
     def _should_update(self, user: models.User, foreign: UserSecurity):
         return (

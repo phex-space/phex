@@ -25,8 +25,9 @@ def dispose():
 
 
 async def _oidc_listener(event_type: str, user: phexsec.User):
-    _logger.debug("Handle event '{}': {}".format(event_type, user))
     from .controller import UserService
+
+    _logger.debug("Handle event '{}': {}".format(event_type, user))
     users: UserService = services.get("users")
     if event_type == "user_authorized":
         await users.handle_authorized_user(schema.UserCreate(**user.dict()))

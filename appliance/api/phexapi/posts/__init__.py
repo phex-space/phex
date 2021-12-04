@@ -17,9 +17,9 @@ async def initialize(server: fastapi.FastAPI, configuration: Configuration):
 
 
 async def bootstrap():
-    _logger.debug("Setting up posts")
     from . import controller
 
+    _logger.debug("Setting up posts")
     services.register("posts", controller.PostsService())
     _logger.debug("Posts are set up.")
 
