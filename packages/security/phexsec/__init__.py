@@ -6,6 +6,7 @@ __all__ = [
     "OpenIdConnect",
     "OpenIdConnectClient",
     "OpenIdConnectConfiguration",
+    "User",
 ]
 
 from phexsec.access import Access
@@ -14,3 +15,4 @@ from phexsec.grant import Grant
 from phexsec.openidconnect import OpenIdConnect
 from phexsec.openidconnectclient import OpenIdConnectClient
 from phexsec.openidconnectconfiguration import OpenIdConnectConfiguration
+from phexsec.user import User

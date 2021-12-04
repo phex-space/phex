@@ -17,12 +17,3 @@ class Access(object):
 
     def __str__(self):
         return self.__str
-
-    def __repr__(self):
-        buffer = StringIO()
-        buffer.write("Access(scope=\"")
-        buffer.write(self.scope)
-        buffer.write("\", resource=\"")
-        buffer.write(self.resource)
-        buffer.write("\")")
-        return buffer.getvalue()

@@ -44,7 +44,13 @@ def _make_jwt_and_key(
 
 @pytest.mark.asyncio
 async def test_authenticate(app: FastAPI, client: TestClient, httpx_mock: HTTPXMock):
-    test_claims = {"test": "token"}
+    test_claims = {
+        "sub": "test-id",
+        "family_name": "Test",
+        "given_name": "User",
+        "preferred_username": "tester",
+        "email": "test.user@test.org"
+    }
     expected_grant: typing.Optional[Grant] = None
 
     keyset, token = _make_jwt_and_key(test_claims)
@@ -70,14 +76,27 @@ async def test_authenticate(app: FastAPI, client: TestClient, httpx_mock: HTTPXM
 
     assert response.status_code == 200
     assert expected_grant.access_token == token_serialized
-    assert expected_grant.user == test_claims
+    assert expected_grant.decoded_token is not None
+    assert "sub" in expected_grant.decoded_token
+    assert expected_grant.decoded_token["sub"] == "test-id"
+    assert expected_grant.user.id == "test-id"
+    assert expected_grant.user.login == "tester"
+    assert expected_grant.user.lastname == "Test"
+    assert expected_grant.user.firstname == "User"
+    assert expected_grant.user.email == "test.user@test.org"
 
     await oidc_client.dispose()
 
 
 @pytest.mark.asyncio
 async def test_approve(app: FastAPI, client: TestClient, httpx_mock: HTTPXMock):
-    test_claims = {"test": "token"}
+    test_claims = {
+        "sub": "test-id",
+        "family_name": "Test",
+        "given_name": "User",
+        "preferred_username": "tester",
+        "email": "test.user@test.org"
+    }
     test_authorization = {
         "authorization": {"permissions": [{"rsname": "Approve", "scopes": ["test"]}]}
     }
