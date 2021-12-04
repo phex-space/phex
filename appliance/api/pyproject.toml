@@ -14,6 +14,7 @@ phexcore = {path = "../../packages/core"}
 psycopg2 = "^2.9.2"
 toml = "^0.10.2"
 phexsec = {path = "../../packages/security"}
+async_lru = "^1.0.2"
 
 [tool.poetry.dev-dependencies]
 

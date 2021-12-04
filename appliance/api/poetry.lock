@@ -16,6 +16,14 @@ test = ["coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "pytest (>=6.0)", "pytes
 trio = ["trio (>=0.16)"]
 
 [[package]]
+name = "async-lru"
+version = "1.0.2"
+description = "Simple lru_cache for asyncio"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "certifi"
 version = "2021.10.8"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -412,12 +420,15 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "9994b5c7786e6d2695bc363b82cc2db4d637c1cdbc43dc4363bb17a471467b05"
+content-hash = "cfe4798d54894010d73f71a669c1b8d3ac653ed22b3c55f3964c1bb3907acb00"
 
 [metadata.files]
 anyio = [
     {file = "anyio-3.4.0-py3-none-any.whl", hash = "sha256:2855a9423524abcdd652d942f8932fda1735210f77a6b392eafd9ff34d3fe020"},
     {file = "anyio-3.4.0.tar.gz", hash = "sha256:24adc69309fb5779bc1e06158e143e0b6d2c56b302a3ac3de3083c705a6ed39d"},
+]
+async-lru = [
+    {file = "async_lru-1.0.2.tar.gz", hash = "sha256:baa898027619f5cc31b7966f96f00e4fc0df43ba206a8940a5d1af5336a477cb"},
 ]
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},

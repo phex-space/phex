@@ -2,6 +2,7 @@ import logging
 from fastapi.exceptions import HTTPException
 import sqlalchemy
 
+from phexapi.auth import oidc_scheme
 from . import models, schema
 
 _logger = logging.getLogger(__name__)
@@ -40,8 +41,9 @@ class PostsService(object):
     async def list(
         self, session: sqlalchemy.orm.Session, skip: int = 0, limit: int = 20
     ) -> list[schema.PostObject]:
+        grant = oidc_scheme.grant
         return [
-            schema.PostObject(**post._asdict())
+            schema.PostObject(**post._asdict(), owner=grant.user)
             for post in session.query(models.Post)
             .order_by(models.Post.updated_at)
             .offset(skip)

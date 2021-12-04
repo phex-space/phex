@@ -17,3 +17,4 @@ class PostObject(pydantic.BaseModel):
     published: bool
     created_at: datetime.datetime
     updated_at: datetime.datetime
+    owner: typing.Optional[dict]

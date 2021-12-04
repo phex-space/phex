@@ -36,7 +36,7 @@ services.register("config", config)
 async def initialize():
     global _phexlets
     _phexlets = await loader.load_phexlets(
-        ["phexcore.database", "phexapi.posts"], server, config, suppress_errors=True
+        ["phexcore.database", "phexapi.users", "phexapi.posts"], server, config, suppress_errors=True
     )
 
 
