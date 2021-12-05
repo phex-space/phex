@@ -107,3 +107,4 @@ dist
 *.bak
 
 __pycache__
+.coverage
