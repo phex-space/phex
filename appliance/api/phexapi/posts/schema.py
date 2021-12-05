@@ -3,6 +3,8 @@ import typing
 
 import pydantic
 
+from ..users.schema import UserObject
+
 
 class PostCreate(pydantic.BaseModel):
     title: str
@@ -17,4 +19,7 @@ class PostObject(pydantic.BaseModel):
     published: bool
     created_at: datetime.datetime
     updated_at: datetime.datetime
-    owner: typing.Optional[dict]
+    owner: typing.Optional[UserObject]
+
+    class Config:
+        orm_mode = True

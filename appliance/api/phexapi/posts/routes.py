@@ -1,10 +1,11 @@
+import typing
 import fastapi
-from phexsec.grant import Grant
 import sqlalchemy
 
 import phexsec
 from phexapi.auth import oidc_scheme
 from phexcore import services
+from phexsec.grant import Grant
 
 from . import schema
 
@@ -20,7 +21,7 @@ def _get_session_creator() -> sqlalchemy.orm.Session:
         session.close()
 
 
-@router.get("")
+@router.get("", response_model=typing.List[schema.PostObject])
 async def list_posts(
     session: sqlalchemy.orm.Session = fastapi.Depends(_get_session_creator),
     consent: phexsec.Consent = fastapi.Depends(
@@ -31,7 +32,7 @@ async def list_posts(
     return await posts().list(session)
 
 
-@router.post("", status_code=201)
+@router.post("", status_code=201, response_model=schema.PostObject)
 async def create_post(
     post: schema.PostCreate,
     session: sqlalchemy.orm.Session = fastapi.Depends(_get_session_creator),
@@ -43,7 +44,7 @@ async def create_post(
     return await posts().create(session, post)
 
 
-@router.get("/{id}")
+@router.get("/{id}", response_model=schema.PostObject)
 async def read_post(
     id: int,
     session: sqlalchemy.orm.Session = fastapi.Depends(_get_session_creator),
@@ -55,7 +56,7 @@ async def read_post(
     return await posts().read(session, id)
 
 
-@router.put("/{id}")
+@router.put("/{id}", response_model=schema.PostObject)
 async def update_post(
     id: int,
     post: schema.PostCreate,

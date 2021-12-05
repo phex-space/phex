@@ -12,15 +12,15 @@ class PostsService(object):
     async def create(
         self, session: sqlalchemy.orm.Session, data: schema.PostCreate
     ) -> schema.PostObject:
-        new_post = models.Post(**data.dict())
+        grant = oidc_scheme.grant
+        new_post = models.Post(**data.dict(), owner_id=grant.user.id)
         session.add(new_post)
         session.commit()
         session.refresh(new_post)
         return schema.PostObject(**new_post._asdict())
 
     async def read(self, session: sqlalchemy.orm.Session, id: int) -> schema.PostObject:
-        post = await self._get_post(session, id)
-        return schema.PostObject(**post._asdict())
+        return await self._get_post(session, id)
 
     async def update(
         self, session: sqlalchemy.orm.Session, id: int, data: schema.PostCreate
@@ -31,7 +31,7 @@ class PostsService(object):
         post.published = data.published
         session.commit()
         session.refresh(post)
-        return schema.PostObject(**post._asdict())
+        return post
 
     async def delete(self, session: sqlalchemy.orm.Session, id: int) -> None:
         post = await self._get_post(session, id)
@@ -41,15 +41,13 @@ class PostsService(object):
     async def list(
         self, session: sqlalchemy.orm.Session, skip: int = 0, limit: int = 20
     ) -> list[schema.PostObject]:
-        grant = oidc_scheme.grant
-        return [
-            schema.PostObject(**post._asdict(), owner=grant.user)
-            for post in session.query(models.Post)
+        return (
+            session.query(models.Post)
             .order_by(models.Post.updated_at)
             .offset(skip)
             .limit(limit)
             .all()
-        ]
+        )
 
     async def _get_post(self, session: sqlalchemy.orm.Session, id: int) -> models.Post:
         post = session.query(models.Post).get(id)

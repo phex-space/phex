@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 from sqlalchemy.sql.functions import func
 
 from phexcore import services
@@ -16,9 +17,14 @@ class Post(_Base):
     title = Column(String, nullable=False)
     content = Column(String, nullable=False)
     published = Column(Boolean, server_default="true", nullable=False)
-    created_at = Column(DateTime(timezone=False), server_default=func.now())
+    created_at = Column(
+        DateTime(timezone=False), nullable=False, server_default=func.now()
+    )
     updated_at = Column(
         DateTime(timezone=False),
+        nullable=False,
         server_default=func.now(),
         onupdate=func.current_timestamp(),
     )
+    owner_id = Column(String, ForeignKey("users.id"), nullable=False)
+    owner = relationship("User")
