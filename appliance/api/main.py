@@ -36,7 +36,10 @@ services.register("config", config)
 async def initialize():
     global _phexlets
     _phexlets = await loader.load_phexlets(
-        ["phexcore.database", "phexapi.users", "phexapi.posts"], server, config, suppress_errors=True
+        ["phexapi.protect", "phexcore.database", "phexapi.users", "phexapi.posts"],
+        server,
+        config,
+        suppress_errors=True,
     )
 
 
@@ -70,5 +73,5 @@ def _get_root_info():
         "name": poetry["name"],
         "version": poetry["version"],
         "description": poetry["description"],
-        "libs": [{"phexcore": phexcore.__version__},{"phexsec": phexsec.__version__}],
+        "libs": [{"phexcore": phexcore.__version__}, {"phexsec": phexsec.__version__}],
     }
