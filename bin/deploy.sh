@@ -21,6 +21,10 @@ cp -fv ${PROJECT_HOME}/*.yml ${PHEX_DIST}
 
 info "Aktualisiere Datenbank Konfiguration"
 rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/appliance/database/ ${PHEX_DIST}/appliance/database/
+info "Aktualisiere Gateway Konfiguration"
+rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/appliance/gateway/ ${PHEX_DIST}/appliance/gateway/
+info "Aktualisiere Identity Provider Konfiguration"
+rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/appliance/identity/ ${PHEX_DIST}/appliance/identity/
 # info "Aktualisiere Monitoring Konfiguration"
 # rsync -r --verbose --delete ${PROJECT_HOME}/appliance/monitoring/ ${PHEX_DIST}/appliance/monitoring/
 

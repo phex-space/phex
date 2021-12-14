@@ -7,8 +7,10 @@ networks:
     external: true
 
 services:
+
   gateway:
     build: ./appliance/gateway
+    restart: always
     logging:
       options:
         max-size: "10m"
@@ -27,6 +29,13 @@ services:
 
   certbot:
     image: certbot/certbot
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      dmz:
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot

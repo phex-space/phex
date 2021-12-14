@@ -1,0 +1,30 @@
+version: "3.8"
+
+networks:
+  service:
+    external: true
+  data:
+    external: true
+
+services:
+
+  identity:
+    build: ./appliance/identity
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+        - service
+        - data
+    environment:
+        PROXY_ADDRESS_FORWARDING: "true"
+        KEYCLOAK_USER: ${KEYCLOAK_ADMINUSER}
+        KEYCLOAK_PASSWORD: ${KEYCLOAK_ADMINUSER_PASSWORD}
+        DB_VENDOR: postgres
+        DB_ADDR: db
+        DB_DATABASE: identity
+        DB_SCHEMA: keycloak
+        DB_USER: phex
+        DB_PASSWORD: ${DATABASE_USER_PASSWORD}
