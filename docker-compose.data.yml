@@ -1,0 +1,27 @@
+version: "3.8"
+
+volumes:
+  postgresql:
+  postgresql_data:
+
+networks:
+  data:
+    external: true
+
+services:
+
+  db:
+    build: ./appliance/database
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - data
+    environment:
+      POSTGRES_DB: phex
+      POSTGRES_USER: phex
+      POSTGRES_PASSWORD: ${DATABASE_USER_PASSWORD}
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data

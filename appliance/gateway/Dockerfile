@@ -1,7 +1,11 @@
-FROM nginx:mainline
+FROM alpine:3.15
 
-COPY ./conf.d/default.conf \
-    ./conf.d/api.phex.local.crt ./conf.d/api.phex.local.key \
-    ./conf.d/identity.phex.local.crt ./conf.d/identity.phex.local.key \
-    ./conf.d/phex.local.crt ./conf.d/phex.local.key \
-    /etc/nginx/conf.d/
+RUN  apk update && apk upgrade --available && sync \
+    && mkdir -p /run/nginx \
+    && apk add --no-cache nginx-mod-http-lua
+
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./mitigate-log4shell.conf /etc/nginx/mitigate-log4shell.conf
+COPY ./conf.d/ /etc/nginx/conf.d/
+
+CMD ["nginx"]
