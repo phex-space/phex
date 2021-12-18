@@ -1,0 +1,24 @@
+version: "3.8"
+
+networks:
+  service:
+    external: true
+  data:
+    external: true
+
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: ./appliance/api/Dockerfile
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+        - service
+        - data
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
