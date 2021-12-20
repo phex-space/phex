@@ -1,22 +1,17 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer";
 
-import Callback from "./components/authentication/Callback";
-import {Counter} from './features/counter/Counter';
-import './App.css';
-import {authLogin, authLogout} from "./features/authentication/authenticationSlice";
-import {useDispatch} from "react-redux";
+import { Navigation } from "./components/Navigation";
 
-function App() {
-    const dispatch = useDispatch();
-
-    return (
-        <>
-            <Counter/>
-            <button onClick={() => dispatch(authLogin())}>Login</button>
-            <button onClick={() => dispatch(authLogout())}>Logout</button>
-        </>
-    );
+function App({ children }) {
+  return (
+    <div>
+      <Navigation />
+      <Outlet />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
