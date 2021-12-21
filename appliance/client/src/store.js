@@ -1,9 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 
-import security from "./features/security"
+import imageApi from "./features/imageApi";
+import security from "./features/security";
 
 export const store = configureStore({
   reducer: {
-    [security.name]: security.reducer
+    [imageApi.name]: imageApi.reducer,
+    [security.name]: security.reducer,
   },
 });

@@ -17,6 +17,7 @@ import App from "./App";
 import Home from "./routes/home";
 import Impressum from "./routes/Impressum";
 import Privacy from "./routes/Privacy";
+import Manage from "./routes/manage";
 
 let theme = createTheme({
   palette: {
@@ -77,6 +78,7 @@ ReactDOM.render(
           <Routes>
             <Route element={<App />}>
               <Route index path="/" element={<Home />} />
+              <Route path="/manage" element={<Manage />} />
               <Route path="/impressum" element={<Impressum />} />
               <Route path="/privacy" element={<Privacy />} />
 

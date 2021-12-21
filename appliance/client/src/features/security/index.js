@@ -2,15 +2,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { UserManager } from "oidc-client";
 
+import globals from "../../globals";
+
 export { default as Authentication } from "./Authentication";
 export { default as AuthenticationCallback } from "./AuthenticationCallback";
 
 let _userManager, _navigate, _callbackPath;
 
 const name = "security";
+const { apiUrl } = globals;
 
 const initialState = {
   initialized: false,
+  token: null,
   profile: null,
   status: "idle",
 };
@@ -31,8 +35,12 @@ const init = createAsyncThunk(
     const auth = await getUserManager().getUser();
     if (!auth) return null;
     if (auth.expired) return null;
-    const { profile } = auth;
-    return profile;
+    const { profile, access_token } = auth;
+    await fetch(`${apiUrl}/users/me`, {
+      headers: { Authorization: `Bearer ${access_token}` },
+      credentials: "include",
+    });
+    return { profile, token: access_token };
   }
 );
 
@@ -78,37 +86,36 @@ const securitySlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(init.fulfilled, (state, { payload }) => {
-        state.profile = payload;
+        const { profile, token } = payload || {};
+        state.profile = profile;
+        state.token = token;
         state.initialized = true;
       })
       .addCase(init.rejected, (state, { payload }) => {
         state.profile = null;
+        state.token = null;
         state.initialized = true;
       });
 
+    const callbackHandler = (state, { payload }) => {
+      const { data, profile, access_token } = payload || {};
+      state.profile = profile;
+      state.token = access_token;
+      if (data && data.pathname !== _callbackPath) _navigate(data.pathname);
+      else _navigate("/");
+    };
+    const callbackRejectedHandler = (state, { payload }) => {
+      state.profile = null;
+      state.token = null;
+      _navigate("/");
+    };
     builder
-      .addCase(callback.fulfilled, (state, { payload }) => {
-        const { data, profile } = payload || {};
-        state.profile = profile;
-        if (data && data.pathname !== _callbackPath) _navigate(data.pathname);
-        else _navigate("/");
-      })
-      .addCase(callback.rejected, (state, { payload }) => {
-        state.profile = null;
-        _navigate("/");
-      });
+      .addCase(callback.fulfilled, callbackHandler)
+      .addCase(callback.rejected, callbackRejectedHandler);
 
     builder
-      .addCase(silentCallback.fulfilled, (state, { payload }) => {
-        const { data, profile } = payload || {};
-        state.profile = profile;
-        if (data && data.pathname !== _callbackPath) _navigate(data.pathname);
-        else _navigate("/");
-      })
-      .addCase(silentCallback.rejected, (state, { payload }) => {
-        state.profile = null;
-        _navigate("/");
-      });
+      .addCase(silentCallback.fulfilled, callbackHandler)
+      .addCase(silentCallback.rejected, callbackRejectedHandler);
   },
 });
 
@@ -124,6 +131,7 @@ const selectors = {
   isInitialized: (state) => state[name].initialized,
   isAuthenticated: (state) => !!state[name].profile,
   getProfile: (state) => state[name].profile,
+  getToken: (state) => state[name].token,
 };
 
 const security = {
