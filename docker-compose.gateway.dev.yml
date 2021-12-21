@@ -1,0 +1,22 @@
+version: "3.8"
+
+networks:
+  dmz:
+    external: true
+  service:
+    external: true
+
+services:
+
+  gateway:
+    build: ./appliance/gateway/dev
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      dmz:
+      service:
+    ports:
+      - "80:80"
+      - "443:443"

@@ -1,5 +1,6 @@
-import logging
 import fastapi
+import logging
+import os
 
 import phexsec
 from phexcore import events, services
@@ -8,8 +9,15 @@ from phexcore.protocol import Configuration
 from phexapi.auth import oidc_scheme
 
 from . import schema
+from .routes import router
 
 _logger = logging.getLogger(__name__)
+
+
+async def initialize(server: fastapi.FastAPI, configuration: Configuration):
+    _logger.debug("Initialize users")
+    server.include_router(router)
+    _logger.debug("Users are initialized.")
 
 
 def bootstrap():

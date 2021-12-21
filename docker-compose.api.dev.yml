@@ -15,7 +15,6 @@ services:
     build:
       context: .
       dockerfile: ./appliance/api/Dockerfile
-    restart: always
     logging:
       options:
         max-size: "10m"
@@ -27,3 +26,6 @@ services:
       DATABASE_URL: ${DATABASE_URL}
     volumes:
       - data_images:/srv/data/images
+      - ./appliance/api:/opt/phex/api
+      - ./packages/core/phexcore:/venv/lib/python3.10/site-packages/phexcore
+      - ./packages/security/phexsec:/venv/lib/python3.10/site-packages/phexsec

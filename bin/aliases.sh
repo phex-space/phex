@@ -7,3 +7,5 @@ alias gw="docker-compose -f ${PROJECT_HOME}/docker-compose.gateway.yml --env-fil
 alias db="docker-compose -f ${PROJECT_HOME}/docker-compose.data.yml --env-file ${PROJECT_HOME}/.env -p data"
 alias idp="docker-compose -f ${PROJECT_HOME}/docker-compose.identity.yml --env-file ${PROJECT_HOME}/.env -p identity"
 alias api="docker-compose -f ${PROJECT_HOME}/docker-compose.api.yml --env-file ${PROJECT_HOME}/.env -p api"
+alias apidev="docker-compose -f ${PROJECT_HOME}/docker-compose.api.dev.yml --env-file ${PROJECT_HOME}/.env -p api"
+alias gwdev="docker-compose -f ${PROJECT_HOME}/docker-compose.gateway.dev.yml --env-file ${PROJECT_HOME}/.env -p gateway"

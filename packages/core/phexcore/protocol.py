@@ -10,6 +10,8 @@ class Configuration(pydantic.BaseSettings):
     database_autocommit: bool = False
     database_autoflush: bool = False
 
+    images_path: typing.Optional[str] = "/tmp/images"
+
 
 class Initializable(typing.Protocol):
     def initialize(self, app: fastapi.FastAPI, configuration: Configuration) -> None:
