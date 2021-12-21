@@ -1,5 +1,6 @@
 import contextvars
 import logging
+from os import path
 import typing
 
 from fastapi import HTTPException, Depends
@@ -50,14 +51,30 @@ class OpenIdConnect(SecurityBase):
         self.__listeners.remove(handler)
 
     async def __call__(self, request: Request, response: Response):
-        authorization: str = request.headers.get("Authorization")
+        authorization = request.headers.get("Authorization")
         if not authorization:
-            raise HTTPException(
-                401,
-                {"error": "Unauthorized", "message": "Provide authorization header"},
+            authorization: str = request.cookies.get("phex_token", None)
+            if not authorization:
+                raise HTTPException(
+                    401,
+                    {
+                        "error": "Unauthorized",
+                        "message": "Provide authorization header",
+                    },
+                )
+        else:
+            _, authorization = get_authorization_scheme_param(authorization)
+        if "phex_token" not in request.cookies or authorization != request.cookies["phex_token"]:
+            response.set_cookie(
+                "phex_token",
+                authorization,
+                path="/",
+                domain=request.headers.get("host"),
+                secure=True,
+                httponly=True,
+                samesite="None"
             )
-
-        _, access_token = get_authorization_scheme_param(authorization)
+        access_token = authorization
         grant = Grant(
             access_token=access_token,
             decoded_token=decode_jwt(access_token, await self.client.keyset()),
@@ -83,7 +100,10 @@ class OpenIdConnect(SecurityBase):
             try:
                 await listener(event_type, user)
             except:
-                _logger.error("Error firing OpenId Connect event {}".format(event_type), exc_info=True)
+                _logger.error(
+                    "Error firing OpenId Connect event {}".format(event_type),
+                    exc_info=True,
+                )
         _logger.debug("Fired OpenId Connect event '{}'".format(event_type))
 
 
