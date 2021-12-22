@@ -5,13 +5,14 @@ import { Provider } from "react-redux";
 
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 
+import "./init";
+import "./i18n";
+
 import { store } from "./store";
 import * as serviceWorker from "./serviceWorker";
 
 import "./index.css";
 import { Authentication, AuthenticationCallback } from "./features/security";
-
-import "./i18n";
 
 import App from "./App";
 import Home from "./routes/home";

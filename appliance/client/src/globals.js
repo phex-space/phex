@@ -1,5 +1,11 @@
+const isDevelopment = process.env.NODE_ENV === "development";
+const apiUrl = isDevelopment
+  ? "https://api.phex.local"
+  : "https://api.phex.space";
+
 const globals = {
-  apiUrl: "https://api.phex.local",
+  isDevelopment,
+  apiUrl,
 };
 
 export default globals;
