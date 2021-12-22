@@ -27,19 +27,19 @@ function FooterComponent(props) {
   return (
     <Footer ref={footerRef}>
       <Container>
-        <Toolbar style={{padding: 0}}>
-          <Box>
-            &copy; {new Date().getFullYear()} Christian Dein - Alle Rechte
-            vorbehalten.
-          </Box>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{display: "flex", flexDirection: "column", alignItems: "end"}}>
-            <Link component={RouterLink} to="/impressum">
+        <Toolbar style={{ padding: 0 }}>
+          <Box sx={{ display: "flex", flexDirection: "row" }}>
+            <Link component={RouterLink} to="/impressum" sx={{ mr: 2 }}>
               Impressum
-            </Link>{" "}
+            </Link>
             <Link component={RouterLink} to="/privacy">
               Datenschutzerklärung
             </Link>
+          </Box>
+          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ display: "flex", flexDirection: "row" }}>
+            &copy; {new Date().getFullYear()} Christian Dein - Alle Rechte
+            vorbehalten.
           </Box>
         </Toolbar>
       </Container>
