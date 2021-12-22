@@ -17,3 +17,12 @@ db exec -T db pg_dump --username=phex identity > ${BACKUP_HOME}/identity-0.sql
 gzip ${BACKUP_HOME}/identity-0.sql
 
 cp ${BACKUP_HOME}/identity-0.sql.gz ${PROJECT_HOME}/appliance/database/initdb.d/10-identity.sql.gz
+
+rotate ${BACKUP_HOME}/phex-0.sql.gz
+
+info "Backup phex database."
+PGPASSWORD=${DATABASE_USER_PASSWORD}
+db exec -T db pg_dump --username=phex phex > ${BACKUP_HOME}/phex-0.sql
+gzip ${BACKUP_HOME}/phex-0.sql
+
+cp ${BACKUP_HOME}/phex-0.sql.gz ${PROJECT_HOME}/appliance/database/initdb.d/10-phex.sql.gz
