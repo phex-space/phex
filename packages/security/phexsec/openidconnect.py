@@ -64,7 +64,10 @@ class OpenIdConnect(SecurityBase):
                 )
         else:
             _, authorization = get_authorization_scheme_param(authorization)
-        if "phex_token" not in request.cookies or authorization != request.cookies["phex_token"]:
+        if (
+            "phex_token" not in request.cookies
+            or authorization != request.cookies["phex_token"]
+        ):
             response.set_cookie(
                 "phex_token",
                 authorization,
@@ -72,7 +75,7 @@ class OpenIdConnect(SecurityBase):
                 domain=request.headers.get("host"),
                 secure=True,
                 httponly=True,
-                samesite="None"
+                samesite="None",
             )
         access_token = authorization
         grant = Grant(
@@ -99,7 +102,7 @@ class OpenIdConnect(SecurityBase):
         for listener in self.__listeners:
             try:
                 await listener(event_type, user)
-            except:
+            except Exception:
                 _logger.error(
                     "Error firing OpenId Connect event {}".format(event_type),
                     exc_info=True,
