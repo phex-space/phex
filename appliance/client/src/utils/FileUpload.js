@@ -36,7 +36,6 @@ export class FileUpload {
       let rejected = false;
 
       xhr.open("POST", url, true);
-      xhr.withCredentials = true;
       Object.keys(this.headers).forEach((header) => {
         xhr.setRequestHeader(header, this.headers[header]);
       });

@@ -5,6 +5,6 @@ import globals from "./globals";
 const { isDevelopment } = globals;
 
 const log = getLogger("root", {
-  level: isDevelopment ? Level.Debug : Level.Information,
+  level: isDevelopment ? Level.Trace : Level.Information,
 });
 log.info("Start phex app.");

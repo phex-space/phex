@@ -19,6 +19,8 @@ import Home from "./routes/home";
 import Impressum from "./routes/Impressum";
 import Privacy from "./routes/Privacy";
 import Manage from "./routes/manage";
+import Protected from "./components/Protected";
+import AuthenticationSilentCallback from "./features/security/AuthenticationSilentCallback";
 
 let theme = createTheme({
   palette: {
@@ -79,19 +81,26 @@ ReactDOM.render(
           <Routes>
             <Route element={<App />}>
               <Route index path="/" element={<Home />} />
-              <Route path="/manage" element={<Manage />} />
+              <Route
+                path="/manage"
+                element={
+                  <Protected>
+                    <Manage />
+                  </Protected>
+                }
+              />
               <Route path="/impressum" element={<Impressum />} />
               <Route path="/privacy" element={<Privacy />} />
 
               <Route
-                index
+                exact
                 path="/security/auth"
                 element={<AuthenticationCallback />}
               />
               <Route
-                index
+                exact
                 path="/security/auth/silent"
-                element={<AuthenticationCallback />}
+                element={<AuthenticationSilentCallback />}
               />
             </Route>
           </Routes>
