@@ -13,18 +13,21 @@ class ImageCreate(pydantic.BaseModel):
     mimetype: str
     size: int
     modified: datetime.datetime
+    thumbnail: typing.Optional[str]
 
 
 class ImageUpdate(pydantic.BaseModel):
+    id: str
     title: typing.Optional[str]
     description: typing.Optional[str]
 
 
 class ImageInfoObject(pydantic.BaseModel):
     id: typing.Optional[str]
+    name: typing.Optional[str]
     title: typing.Optional[str]
     description: typing.Optional[str]
-    updated_at: typing.Optional[datetime.datetime]
+    modified: typing.Optional[datetime.datetime]
     owner: typing.Optional[UserObject]
 
     class Config:

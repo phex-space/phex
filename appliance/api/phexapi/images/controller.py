@@ -15,8 +15,6 @@ class ImagesService(object):
         grant = oidc_scheme.grant
         new_image = models.Image(**data.dict(), owner_id=grant.user.id)
         session.add(new_image)
-        session.commit()
-        session.refresh(new_image)
         return new_image
 
     async def read(
@@ -30,14 +28,11 @@ class ImagesService(object):
         image = await self._get_image(session, id)
         image.title = data.title
         image.description = data.description
-        session.commit()
-        session.refresh(image)
         return image
 
     async def delete(self, session: sqlalchemy.orm.Session, id: str) -> None:
         image = await self._get_image(session, id)
         session.delete(image)
-        session.commit()
 
     async def list(
         self, session: sqlalchemy.orm.Session, skip: int = 0, limit: int = 20

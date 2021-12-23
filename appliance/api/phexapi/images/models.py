@@ -15,6 +15,7 @@ class Image(_Base):
     id = Column(String(40), primary_key=True, nullable=True)
     path = Column(String, nullable=False, unique=True)
     name = Column(String, nullable=False)
+    thumbnail = Column(String)
     mimetype = Column(String, nullable=False)
     size = Column(Integer, nullable=False)
     modified = Column(DateTime, nullable=False)
