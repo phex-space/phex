@@ -7,6 +7,7 @@ from fastapi import HTTPException, Depends
 from fastapi.openapi.models import SecurityBase as SecurityBaseModel, SecuritySchemeType
 from fastapi.security.base import SecurityBase
 from fastapi.security.utils import get_authorization_scheme_param
+from jwcrypto.jwt import JWException
 from pydantic.fields import Field
 from starlette.requests import Request
 from starlette.responses import Response
@@ -78,14 +79,22 @@ class OpenIdConnect(SecurityBase):
                 samesite="None",
             )
         access_token = authorization
-        grant = Grant(
-            access_token=access_token,
-            decoded_token=decode_jwt(access_token, await self.client.keyset()),
-        )
         try:
+            grant = Grant(
+                access_token=access_token,
+                decoded_token=decode_jwt(access_token, await self.client.keyset()),
+            )
             self.__grant.set(grant)
             await self._fire_event("user_authorized", grant.user)
             yield grant
+        except JWException:
+            raise HTTPException(
+                403,
+                {
+                    "error": "JwtInvalid",
+                    "message": "The provided JWT is invalid. May be it is expired.",
+                },
+            )
         finally:
             self.__grant.set(None)
 
