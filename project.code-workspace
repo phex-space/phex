@@ -17,6 +17,7 @@
 		}
 	],
 	"settings": {
+		"python.formatting.blackPath": "/usr/bin/black",
 		"python.formatting.provider": "black"
 	}
 }

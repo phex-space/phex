@@ -9,12 +9,11 @@ import exif
 from fastapi.exceptions import HTTPException
 from PIL import Image
 
-from phexapi.auth import oidc_scheme
+from phexapi import auth
 from phexcore import services
 from phexsec.grant import Grant
 
 from . import schema
-from phexapi import auth
 
 _logger = logging.getLogger(__name__)
 router = fastapi.APIRouter(prefix="/images")

@@ -9,6 +9,7 @@ _database: DatabaseService = services.get("database")
 
 _Base = _database.Base
 
+
 class Image(_Base):
     __tablename__ = "images"
 
@@ -32,3 +33,7 @@ class Image(_Base):
     )
     owner_id = Column(String, ForeignKey("users.id"), nullable=False)
     owner = relationship("User")
+
+    exhibitions = relationship(
+        "ExhibitionImageAssociation", back_populates="image", lazy="subquery"
+    )

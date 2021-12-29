@@ -43,10 +43,14 @@ async function handleUser(thunk) {
   if (auth.expired) return null;
   log.debug("Got authentication object", auth);
   const { profile, access_token, expires_at } = auth;
-  await fetch(`${apiUrl}/users/me`, {
-    headers: { Authorization: `Bearer ${access_token}` },
-    credentials: "include",
-  });
+  try {
+    await fetch(`${apiUrl}/users/me`, {
+      headers: { Authorization: `Bearer ${access_token}` },
+      credentials: "include",
+    });
+  } catch (err) {
+    log.error(err);
+  }
   scheduleRefresh(thunk, expires_at * 1000 - Date.now() - 60 * 1000);
   return {
     profile,

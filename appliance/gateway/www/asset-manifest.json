@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.efc61cd8.css",
+    "main.js": "/static/js/main.9c7de965.js",
+    "static/media/Bungee-Regular.ttf": "/static/media/Bungee-Regular.c9d69b2f441d97c8cb5d.ttf",
+    "index.html": "/index.html",
+    "main.efc61cd8.css.map": "/static/css/main.efc61cd8.css.map",
+    "main.9c7de965.js.map": "/static/js/main.9c7de965.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.efc61cd8.css",
+    "static/js/main.9c7de965.js"
+  ]
+}

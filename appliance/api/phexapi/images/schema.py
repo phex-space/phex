@@ -23,7 +23,7 @@ class ImageUpdate(pydantic.BaseModel):
 
 
 class ImageInfoObject(pydantic.BaseModel):
-    id: typing.Optional[str]
+    id: str
     name: typing.Optional[str]
     title: typing.Optional[str]
     description: typing.Optional[str]

@@ -29,7 +29,7 @@ rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/appliance/gateway/ ${PHEX_DIST
 info "Aktualisiere Identity Provider Konfiguration"
 rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/appliance/identity/ ${PHEX_DIST}/appliance/identity/
 info "Aktualisiere API Konfiguration"
-rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/appliance/api/ ${PHEX_DIST}/appliance/api/
+rsync -r --verbose --exclude .env.${USER} --exclude .env.development ${PROJECT_HOME}/appliance/api/ ${PHEX_DIST}/appliance/api/
 rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/packages/core/ ${PHEX_DIST}/packages/core/
 rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/packages/security/ ${PHEX_DIST}/packages/security/
 # info "Aktualisiere Monitoring Konfiguration"

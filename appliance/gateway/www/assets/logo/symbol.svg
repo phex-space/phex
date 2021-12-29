@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="210mm"
+   height="210mm"
+   viewBox="0 0 210 210"
+   version="1.1"
+   id="svg343"
+   inkscape:export-filename="/home/cdein/Bilder/phex/phex-logo-16.png"
+   inkscape:export-xdpi="1.935238"
+   inkscape:export-ydpi="1.935238"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   sodipodi:docname="symbol.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs337">
+    <linearGradient
+       x1="0"
+       y1="265.06079"
+       x2="465.30365"
+       y2="265.06079"
+       id="linearGradientSkira9mji4"
+       gradientTransform="scale(1.0745671,0.93060733)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#5dae8b"
+         stop-opacity="0.6"
+         id="stop130" />
+      <stop
+         offset="100%"
+         stop-color="#5dae8b"
+         stop-opacity="0.6"
+         id="stop132" />
+    </linearGradient>
+    <linearGradient
+       x1="0"
+       y1="265.06079"
+       x2="465.30365"
+       y2="265.06079"
+       id="linearGradientSkira9mjia"
+       gradientTransform="scale(1.0745671,0.93060733)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#466c95"
+         stop-opacity="0.6"
+         id="stop149" />
+      <stop
+         offset="100%"
+         stop-color="#466c95"
+         stop-opacity="0.6"
+         id="stop151" />
+    </linearGradient>
+    <linearGradient
+       x1="0"
+       y1="265.06079"
+       x2="465.30365"
+       y2="265.06079"
+       id="linearGradientSkira9mjig"
+       gradientTransform="scale(1.0745671,0.93060733)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#ff7900"
+         stop-opacity="0.6"
+         id="stop168" />
+      <stop
+         offset="100%"
+         stop-color="#ff7900"
+         stop-opacity="0.6"
+         id="stop170" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.71"
+     inkscape:cx="358.4507"
+     inkscape:cy="396.47887"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1024"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata340">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g493"
+       transform="matrix(1.3183057,0.02301111,-0.02301111,1.3183057,18.226342,-26.62364)">
+      <g
+         transform="matrix(-0.17312756,-0.09596159,0.09596159,-0.17312756,70.369357,186.4868)"
+         id="g147">
+        <svg
+           width="510"
+           height="443.01501"
+           viewBox="-5 25.16 510 443.015"
+           class="thumb"
+           version="1.1"
+           id="svg145">
+          <defs
+             id="defs135">
+            <linearGradient
+               x1="0"
+               y1="265.06079"
+               x2="465.30365"
+               y2="265.06079"
+               id="linearGradient398"
+               gradientTransform="scale(1.0745671,0.93060733)"
+               gradientUnits="userSpaceOnUse">
+              <stop
+                 offset="0%"
+                 stop-color="#5dae8b"
+                 stop-opacity="0.6"
+                 id="stop297" />
+              <stop
+                 offset="100%"
+                 stop-color="#5dae8b"
+                 stop-opacity="0.6"
+                 id="stop299" />
+            </linearGradient>
+          </defs>
+          <g
+             id="g137" />
+          <g
+             id="g139" />
+          <g
+             id="g143">
+            <polygon
+               points="0,246.667 125,30.16 374.999,30.16 500,246.667 374.999,463.175 125,463.175 "
+               fill="url('#linearGradientSkira9mji4')"
+               stroke="none"
+               style="fill:url(#linearGradientSkira9mji4)"
+               id="polygon141" />
+          </g>
+        </svg>
+      </g>
+      <g
+         transform="matrix(-0.17312756,-0.09596159,0.09596159,-0.17312756,69.359683,137.56237)"
+         id="g166">
+        <svg
+           width="510"
+           height="443.01501"
+           viewBox="-5 25.16 510 443.015"
+           class="thumb"
+           version="1.1"
+           id="svg164">
+          <defs
+             id="defs154">
+            <linearGradient
+               x1="0"
+               y1="265.06079"
+               x2="465.30365"
+               y2="265.06079"
+               id="linearGradient400"
+               gradientTransform="scale(1.0745671,0.93060733)"
+               gradientUnits="userSpaceOnUse">
+              <stop
+                 offset="0%"
+                 stop-color="#466c95"
+                 stop-opacity="0.6"
+                 id="stop310" />
+              <stop
+                 offset="100%"
+                 stop-color="#466c95"
+                 stop-opacity="0.6"
+                 id="stop312" />
+            </linearGradient>
+          </defs>
+          <g
+             id="g156" />
+          <g
+             id="g158" />
+          <g
+             id="g162">
+            <polygon
+               points="374.999,30.16 500,246.667 374.999,463.175 125,463.175 0,246.667 125,30.16 "
+               fill="url('#linearGradientSkira9mjia')"
+               stroke="none"
+               style="fill:url(#linearGradientSkira9mjia)"
+               id="polygon160" />
+          </g>
+        </svg>
+      </g>
+      <g
+         transform="matrix(-0.17312756,-0.09596159,0.09596159,-0.17312756,112.29801,161.29143)"
+         id="g185">
+        <svg
+           width="510"
+           height="443.01501"
+           viewBox="-5 25.16 510 443.015"
+           class="thumb"
+           version="1.1"
+           id="svg183">
+          <defs
+             id="defs173">
+            <linearGradient
+               x1="0"
+               y1="265.06079"
+               x2="465.30365"
+               y2="265.06079"
+               id="RESERVED_FOR_INKSCAPE_DUPLICATE_DEF_000000000"
+               gradientTransform="scale(1.0745671,0.93060733)"
+               gradientUnits="userSpaceOnUse">
+              <stop
+                 offset="0%"
+                 stop-color="#ff7900"
+                 stop-opacity="0.6"
+                 id="stop323" />
+              <stop
+                 offset="100%"
+                 stop-color="#ff7900"
+                 stop-opacity="0.6"
+                 id="stop325" />
+            </linearGradient>
+          </defs>
+          <g
+             id="g175" />
+          <g
+             id="g177" />
+          <g
+             id="g181">
+            <polygon
+               points="125,30.16 374.999,30.16 500,246.667 374.999,463.175 125,463.175 0,246.667 "
+               fill="url('#linearGradientSkira9mjig')"
+               stroke="none"
+               style="fill:url(#linearGradientSkira9mjig)"
+               id="polygon179" />
+          </g>
+        </svg>
+      </g>
+    </g>
+  </g>
+</svg>

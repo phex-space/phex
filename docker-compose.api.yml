@@ -25,5 +25,6 @@ services:
         - data
     environment:
       DATABASE_URL: ${DATABASE_URL}
+      IMAGES_PATH: /srv/data/images
     volumes:
       - data_images:/srv/data/images

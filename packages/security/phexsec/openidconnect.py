@@ -95,6 +95,9 @@ class OpenIdConnect(SecurityBase):
                     "message": "The provided JWT is invalid. May be it is expired.",
                 },
             )
+        except Exception:
+            _logger.error("Unknown error", exc_info=True)
+            raise
         finally:
             self.__grant.set(None)
 
