@@ -35,5 +35,5 @@ rsync -r --verbose --exclude *.gz ${PROJECT_HOME}/packages/security/ ${PHEX_DIST
 # info "Aktualisiere Monitoring Konfiguration"
 # rsync -r --verbose --delete ${PROJECT_HOME}/appliance/monitoring/ ${PHEX_DIST}/appliance/monitoring/
 
-info "Aktualisiere Services im Produktionssystem"
+info "Aktualisiere Services im Produktivsystem"
 rsync -azP ${PHEX_DIST}/ ${DEPLOYMENT_HOST}:/opt/phex/
